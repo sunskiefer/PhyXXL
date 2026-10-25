@@ -15,8 +15,8 @@ and ten modulation sources routed to six destinations of every filter through a 
 # the response picture on a filter page: RC_COLS columns of RC_ROWS rows, each column one stroke (like VADER's envelope)
 RC_COLS, RC_ROWS = 32, 12
 RC_FRAMES = RC_ROWS * (RC_ROWS + 1) // 2
-RC_CW, RC_RH = 12, 5            # column width, row height: a 384 x 60 picture
-RC_XY = (200, 262)
+RC_CW, RC_RH = 20, 8            # column width, row height: a 640 x 96 picture
+RC_XY = (470, 335)
 
 OFF_ON = ["Off", "On"]
 DIVS = ["1/1", "1/2", "1/4", "1/8", "1/16", "1/32", "1/4 T", "1/8 T", "1/16 T", "1/8 .", "1/16 ."]
@@ -78,13 +78,13 @@ VIEW_NO = {k: i for i, k in enumerate(VIEW_KEYS)}
 N_VIEWS = len(VIEWS)
 
 # overview tiles (x, y, w, h): 5 x 3 tiles, the strip below for the meters and the two switches
-_TW, _TH, _GX, _GY, _TX, _TY = 250, 150, 6, 6, 3, 76
+_TW, _TH, _GX, _GY, _TX, _TY = 250, 134, 6, 6, 3, 76
 TILE_VIEWS = FKEYS + ["out", "moda", "mstep", "mfunc", "mgate", "matrix", "bayM"]
 TILES = {}
 for _i, _k in enumerate(TILE_VIEWS):
     TILES[_k] = (_TX + (_i % 5) * (_TW + _GX), _TY + (_i // 5) * (_TH + _GY), _TW, _TH)
-DATA_SLOT = (_TX + 4 * (_TW + _GX), _TY + 2 * (_TH + _GY), _TW, _TH)   # the 15th tile place holds the DATA knob
-STRIP_Y = 546
+STRIP_Y = 500   # the strip under the tiles: meters, CPU, the two switches and the DATA knob
+DATA_POS = (1170, STRIP_Y + 52)
 
 # ---------------------------------------------------------------------------------------------- the controls
 BIG, MED, SMALL = 52, 46, 40
@@ -250,7 +250,7 @@ CONTROLS += [
 CONTROLS += [
     T("limit_res", "Limit Res.", 1, "overview", 800, STRIP_Y + 40, bw=150),
     T("bypass", "Bypass", 0, "overview", 1000, STRIP_Y + 40, bw=150),
-    K("data", "Data", 0, 1, 0.5, "overview", DATA_SLOT[0] + DATA_SLOT[2] // 2, DATA_SLOT[1] + 62, r=MED),
+    K("data", "Data", 0, 1, 0.5, "overview", DATA_POS[0], DATA_POS[1], r=MED),
 ]
 # ---- MOD MATRIX: the amount of the selected cell
 CONTROLS.append(SL("mx_amt", "Amount", -100, 100, 50, "matrix", 640, 566, w=320, h=30, vertical=False))
