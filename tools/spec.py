@@ -7,8 +7,8 @@ Everything else is generated from this file:
 MPC stores automation and saved values by parameter INDEX, so once a version ships the parameter list is append-only.
 Coordinates are skin pixels: the plugin page is 1280 x 628 (layout.conf adds 86 to y, the Force Shadow offset).
 
-PhyXXL is an effect: eight filter modules (after the Korg MS-20, Oberheim SEM, Minimoog, Oberheim Matrix-12, ARP 2600,
-EDP Wasp, Korg prologue and Polivoks), audio routable from any filter into any other (and the plugin input / output),
+PhyXXL is an effect: eight filter modules (in the style of the MS-20, SEM, Minimoog, Matrix-12, 2600,
+Wasp, prologue and Polivoks), audio routable from any filter into any other (and the plugin input / output),
 and ten modulation sources routed to six destinations of every filter through a patch bay or a matrix.
 """
 
@@ -25,13 +25,13 @@ DIV_BEATS = [4, 2, 1, 0.5, 0.25, 0.125, 2 / 3.0, 1 / 3.0, 1 / 6.0, 0.75, 0.375]
 # ------------------------------------------------------------------------------------------------ filters
 # (key, panel name, page title, tile title)
 FILTERS = [
-    ("ms20", "MS-20", "KORG MS-20 FILTER  (HIGHPASS + LOWPASS)", "MS-20"),
-    ("sem", "SEM", "OBERHEIM SEM FILTER", "SEM"),
-    ("mini", "MINI", "MOOG MINI LADDER FILTER", "MINI"),
-    ("m12", "M12", "OBERHEIM MATRIX-12 FILTER", "M12"),
-    ("p26", "2600", "ARP 2600 FILTER", "2600"),
-    ("wasp", "WASP", "EDP WASP FILTER", "WASP"),
-    ("prl", "PROLOGUE", "KORG PROLOGUE FILTER", "PROLOGUE"),
+    ("ms20", "MS-20", "MS-20 STYLE FILTER  (HIGHPASS + LOWPASS)", "MS-20"),
+    ("sem", "SEM", "SEM STYLE FILTER", "SEM"),
+    ("mini", "MINI", "MINI LADDER FILTER", "MINI"),
+    ("m12", "M12", "MATRIX-12 STYLE FILTER", "M12"),
+    ("p26", "2600", "2600 STYLE FILTER", "2600"),
+    ("wasp", "WASP", "WASP STYLE FILTER", "WASP"),
+    ("prl", "PROLOGUE", "PROLOGUE STYLE FILTER", "PROLOGUE"),
     ("poli", "POLIVOKS", "POLIVOKS FILTER", "POLIVOKS"),
 ]
 FKEYS = [f[0] for f in FILTERS]

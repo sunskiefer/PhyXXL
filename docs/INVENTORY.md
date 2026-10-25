@@ -2,7 +2,7 @@
 
 Every control and jack, generated from `tools/spec.py` (the build checks the skin against the same list).
 
-## Korg Ms-20 Filter  (Highpass + Lowpass)
+## Ms-20 Style Filter  (Highpass + Lowpass)
 
 | Control | Key | Range |
 |---|---|---|
@@ -16,7 +16,7 @@ Every control and jack, generated from `tools/spec.py` (the build checks the ski
 | Pan | `ms20_pan` | -100 .. 100 |
 | Out | `ms20_out` | -24 .. 12 dB |
 
-## Oberheim Sem Filter
+## Sem Style Filter
 
 | Control | Key | Range |
 |---|---|---|
@@ -30,7 +30,7 @@ Every control and jack, generated from `tools/spec.py` (the build checks the ski
 | Pan | `sem_pan` | -100 .. 100 |
 | Out | `sem_out` | -24 .. 12 dB |
 
-## Moog Mini Ladder Filter
+## Mini Ladder Filter
 
 | Control | Key | Range |
 |---|---|---|
@@ -42,7 +42,7 @@ Every control and jack, generated from `tools/spec.py` (the build checks the ski
 | Pan | `mini_pan` | -100 .. 100 |
 | Out | `mini_out` | -24 .. 12 dB |
 
-## Oberheim Matrix-12 Filter
+## Matrix-12 Style Filter
 
 | Control | Key | Range |
 |---|---|---|
@@ -53,7 +53,7 @@ Every control and jack, generated from `tools/spec.py` (the build checks the ski
 | Pan | `m12_pan` | -100 .. 100 |
 | Out | `m12_out` | -24 .. 12 dB |
 
-## Arp 2600 Filter
+## 2600 Style Filter
 
 | Control | Key | Range |
 |---|---|---|
@@ -67,7 +67,7 @@ Every control and jack, generated from `tools/spec.py` (the build checks the ski
 | Pan | `p26_pan` | -100 .. 100 |
 | Out | `p26_out` | -24 .. 12 dB |
 
-## Edp Wasp Filter
+## Wasp Style Filter
 
 | Control | Key | Range |
 |---|---|---|
@@ -79,7 +79,7 @@ Every control and jack, generated from `tools/spec.py` (the build checks the ski
 | Pan | `wasp_pan` | -100 .. 100 |
 | Out | `wasp_out` | -24 .. 12 dB |
 
-## Korg Prologue Filter
+## Prologue Style Filter
 
 | Control | Key | Range |
 |---|---|---|

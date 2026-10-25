@@ -18,6 +18,6 @@
   "polivoks"
  ],
  "license": "GPL-3.0-or-later",
- "screenshot": "https://raw.githubusercontent.com/sunskiefer/PhyXXL/v0.1.0/docs/img/overview.png",
- "summary": "Eight classic synth filters in one effect: MS-20, SEM, Minimoog, Matrix-12, ARP 2600, EDP Wasp, Korg prologue and Polivoks. Route audio from any filter into any other, and modulate each one from ten sources through a touch patch bay or a matrix. 28 factory patches. By L'Cronx, GPL-3. No third-party code; not made or endorsed by any maker named."
+ "screenshot": "https://raw.githubusercontent.com/sunskiefer/PhyXXL/v0.1.1/docs/img/overview.png",
+ "summary": "Eight filters in the style of classic synths (MS-20, SEM, Minimoog, Matrix-12, 2600, Wasp, prologue, Polivoks) in one effect. Route audio from any filter into any other, and modulate each one from ten sources through a touch patch bay or a matrix. 28 factory patches. By L'Cronx, GPL-3. No third-party code; not made or endorsed by any maker of the originals."
 }

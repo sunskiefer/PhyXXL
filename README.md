@@ -44,4 +44,4 @@ submodule.
 * The skin carries about 4,800 cable pictures (about 78 MB decoded); if a Force runs short of memory, tell me.
 * The response picture follows each filter's cutoff, resonance and mode with an analytic curve, not a measurement.
 
-No code from any maker named; not made or endorsed by Korg, Oberheim, Moog, ARP, EDP or Polivoks makers. GPL-3.0-or-later.
+The filters are modelled in the style of well-known synth filters (the Korg MS-20 and prologue, Oberheim SEM and Matrix-12, Minimoog, ARP 2600, EDP Wasp, Polivoks). No code from any of them; not made or endorsed by their makers. GPL-3.0-or-later.
