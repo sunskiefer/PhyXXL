@@ -33,8 +33,8 @@ HEADER = (6, 9, 16)
 LINE = (120, 170, 220)
 INK = (236, 242, 252)
 DIM = (150, 168, 192)
-YELLOW = (120, 205, 255)       # the accent (kept under the name the shared helpers use): ice blue
-LED_OFF = (20, 44, 64)
+YELLOW = (240, 240, 240)       # the lit colour (kept under the name the shared helpers use): plain white, as the overview mock
+LED_OFF = (60, 60, 64)
 SS = 2   # supersampling for drawn art
 TAB = "PhyXXL|PhyXXL"
 KNOB_SPAN = 150   # degrees each side of 12 o'clock
@@ -564,8 +564,9 @@ def write_knob_strips(skin):
                 rr = dot_r * scale
                 lit = a <= ang + 0.5
                 if lit:
-                    d.ellipse([x - rr * 1.5, y - rr * 1.5, x + rr * 1.5, y + rr * 1.5], fill=YELLOW + (60,))
-                d.ellipse([x - rr, y - rr, x + rr, y + rr], fill=(YELLOW + (255,)) if lit else (88, 96, 108, 255),
+                    d.ellipse([x - rr * 2.2, y - rr * 2.2, x + rr * 2.2, y + rr * 2.2], fill=(255, 255, 255, 28))
+                    d.ellipse([x - rr * 1.6, y - rr * 1.6, x + rr * 1.6, y + rr * 1.6], fill=(255, 255, 255, 55))
+                d.ellipse([x - rr, y - rr, x + rr, y + rr], fill=(236, 236, 236, 255) if lit else (88, 90, 94, 255),
                           outline=(20, 26, 36, 255), width=max(1, S // 2))
             rot = b.rotate(-ang, resample=Image.BICUBIC)
             fr.alpha_composite(rot, ((F * S - rot.size[0]) // 2, (F * S - rot.size[1]) // 2))
@@ -642,7 +643,7 @@ def text(d, xy, s, size, fill=INK, anchor="mm"):
     d.text((xy[0] * SS, xy[1] * SS), s, font=font(size * SS), fill=fill, anchor=anchor)
 
 
-def frame_box(d, x0, y0, x1, y1, label=None, fill=(4, 8, 16, 150), line=(95, 130, 170, 255), r=14):
+def frame_box(d, x0, y0, x1, y1, label=None, fill=(4, 8, 16, 150), line=(200, 200, 205, 255), r=14):
     d.rounded_rectangle([x0 * SS, y0 * SS, x1 * SS, y1 * SS], radius=r * SS, fill=fill, outline=line, width=2 * SS)
     if label:
         text(d, (x0 + 18, y0 + 20), label, 20, DIM, "lm")
@@ -666,12 +667,10 @@ def new_layer():
 
 
 def header(d, title, sub=None):
-    d.rectangle([0, 0, W * SS, 70 * SS], fill=(4, 7, 14, 215))
-    d.line([0, 70 * SS, W * SS, 70 * SS], fill=(95, 130, 170, 255), width=2 * SS)
     if title == "PhyXXL":
-        text(d, (W // 2, 36), title, 34, INK)
+        text(d, (W // 2, 38), title, 38, INK)
     else:
-        text(d, (430, 36), title, 28, INK, "lm")
+        text(d, (430, 38), title, 34, INK, "lm")
 
 
 def control_labels(d, vkey):
@@ -680,22 +679,22 @@ def control_labels(d, vkey):
             continue
         x, y = c["cx"], c["cy"]
         if c["kind"] == "knob":
-            text(d, (x, y - c["r"] - 22), short_label(c), 19, INK)
+            text(d, (x, y - c["r"] - 26), short_label(c), 28, INK)
         elif c["kind"] == "toggle":
             if not is_ball(c):
-                text(d, (x, y - 34), short_label(c), 19, INK)
+                text(d, (x, y - 34), short_label(c), 28, INK)
             else:
-                text(d, (x, y + 32), re.search(r"\d+$", c["key"]).group(0), 15, DIM)
+                text(d, (x, y + 32), re.search(r"\d+$", c["key"]).group(0), 22, DIM)
         elif c["kind"] == "enum":
-            text(d, (x, y - c["h"] // 2 - 16), short_label(c), 19, INK)
+            text(d, (x, y - c["h"] // 2 - 16), short_label(c), 28, INK)
         elif c["kind"] == "slider":
             if c.get("vertical", True):
-                text(d, (x, y + c["sh"] // 2 + 38), short_label(c), 17, INK)
+                text(d, (x, y + c["sh"] // 2 + 38), short_label(c), 24, INK)
             else:
-                text(d, (x, y - 28), short_label(c), 19, INK)
+                text(d, (x, y - 28), short_label(c), 28, INK)
     if vkey == "mgate":
-        text(d, (58, 186), "GATE", 16, YELLOW, "lm")
-        text(d, (58, 266), "LEGATO", 16, YELLOW, "lm")
+        text(d, (58, 186), "GATE", 22, INK, "lm")
+        text(d, (58, 266), "LEGATO", 22, INK, "lm")
 
 
 def curve_frame(d):
@@ -704,9 +703,9 @@ def curve_frame(d):
     frame_box(d, x - 14, y - 12, x + w + 14, y + h + 38, None, fill=(2, 5, 10, 190), r=12)
     for hz, lab in ((20, "20"), (100, "100"), (1000, "1k"), (10000, "10k"), (20000, "20k")):
         xx = x + w * math.log(hz / 20.0) / math.log(1000.0)
-        d.line([xx * SS, (y + h + 2) * SS, xx * SS, (y + h + 8) * SS], fill=(150, 168, 192, 255), width=SS)
-        text(d, (min(xx, x + w - 8), y + h + 24), lab, 14, DIM)
-    text(d, (x - 28, y + 10), "dB", 14, DIM)
+        d.line([xx * SS, (y + h + 2) * SS, xx * SS, (y + h + 8) * SS], fill=(200, 200, 205, 255), width=SS)
+        text(d, (min(xx, x + w - 8), y + h + 24), lab, 20, DIM)
+    text(d, (x - 28, y + 10), "dB", 20, DIM)
 
 
 def view_panel(i, v):
@@ -714,16 +713,13 @@ def view_panel(i, v):
     im, d = new_layer()
     header(d, v[1])
     if vkey in spec.FKEYS:
-        frame_box(d, 14, 84, 1266, 622, None)
         curve_frame(d)
-    elif vkey in ("out", "moda", "mstep", "mfunc", "mgate"):
-        frame_box(d, 14, 84, 1266, 622, None)
     control_labels(d, vkey)
     if vkey == "moda":
         for lab, x0, x1 in (("LFO", 40, 400), ("ENVELOPE", 440, 840), ("FOLLOWER", 880, 1240)):
-            text(d, (x0, 112), lab, 20, YELLOW, "lm")
+            text(d, (x0, 112), lab, 26, INK, "lm")
     if vkey == "out":
-        text(d, (60, 112), "AUDIO ROUTING", 20, YELLOW, "lm")
+        text(d, (60, 112), "AUDIO ROUTING", 26, INK, "lm")
     if vkey == "mfunc":
         pass
     return im.resize((W, H), Image.LANCZOS)
@@ -747,11 +743,11 @@ def overview_panel(sk):
         ImageDraw.Draw(shade).rounded_rectangle([2, 2, tw - 3, th - 3], radius=18, fill=(2, 4, 10, 205))
         out.alpha_composite(shade, (tx, ty))
         out.alpha_composite(nine_slice(border_of[k], tw, th), (tx, ty))
-        od.text((tx + 20, ty + 38), names[k], font=font(30), fill=INK, anchor="lm")
-    od.text((spec.DATA_POS[0] - 80, spec.DATA_POS[1]), "DATA", font=font(20), fill=INK, anchor="rm")
-    od.text((90, spec.STRIP_Y + 14), "IN", font=font(18), fill=DIM, anchor="mm")
-    od.text((330, spec.STRIP_Y + 14), "OUT", font=font(18), fill=DIM, anchor="mm")
-    od.text((640, spec.STRIP_Y + 14), "CPU", font=font(18), fill=DIM, anchor="mm")
+        od.text((tx + 20, ty + 38), names[k], font=font(34), fill=INK, anchor="lm")
+    od.text((spec.DATA_POS[0] - 80, spec.DATA_POS[1]), "DATA", font=font(26), fill=INK, anchor="rm")
+    od.text((90, spec.STRIP_Y + 14), "IN", font=font(24), fill=DIM, anchor="mm")
+    od.text((330, spec.STRIP_Y + 14), "OUT", font=font(24), fill=DIM, anchor="mm")
+    od.text((640, spec.STRIP_Y + 14), "CPU", font=font(24), fill=DIM, anchor="mm")
     return out
 
 
@@ -775,39 +771,36 @@ def bay_panel(kind):
     im, d = new_layer()
     header(d, "PATCH BAY")
     if kind == "M":
-        frame_box(d, 14, 84, 270, 600, None)
-        frame_box(d, 290, 84, 1266, 600, None)
-        text(d, (142, 97), "SOURCES", 16, DIM)
+        text(d, (142, 97), "SOURCES", 22, DIM)
         for i, s in enumerate(spec.SRCS):
             x, y = spec.mod_out_pos(i)
             hex_socket(d, x, y, spec.JACK_R)
-            text(d, (x + 30, y), s[1], 20, INK, "lm")
+            text(d, (x + 30, y), s[1], 28, INK, "lm")
         for fi, f in enumerate(spec.FILTERS):
             x, _ = spec.mod_in_pos(fi, 0)
-            text(d, (x, 118), f[3], 20, YELLOW)
+            text(d, (x, 118), f[3], 26, INK)
             for di, dk in enumerate(spec.DEST_KEYS):
                 xx, yy = spec.mod_in_pos(fi, di)
                 hex_socket(d, xx, yy, spec.JACK_R)
-                text(d, (xx, yy + 25), spec.DESTS[di][1], 13, DIM)
+                text(d, (xx, yy + 25), spec.DESTS[di][1], 18, DIM)
     else:
-        frame_box(d, 14, 84, 1266, 600, None)
-        text(d, (330, 97), "OUTPUTS", 16, DIM)
-        text(d, (950, 97), "INPUTS", 16, DIM)
+        text(d, (330, 97), "OUTPUTS", 22, DIM)
+        text(d, (950, 97), "INPUTS", 22, DIM)
         for i, a in enumerate(spec.AUDIO_OUTS):
             x, y = spec.aud_out_pos(i)
             hex_socket(d, x, y, spec.JACK_R)
-            text(d, (x - 30, y), a[1], 20, INK, "rm")
+            text(d, (x - 30, y), a[1], 28, INK, "rm")
         for i, b in enumerate(spec.AUDIO_INS):
             x, y = spec.aud_in_pos(i)
             hex_socket(d, x, y, spec.JACK_R)
-            text(d, (x + 30, y), b[1], 20, INK, "lm")
+            text(d, (x + 30, y), b[1], 28, INK, "lm")
     return im.resize((W, H), Image.LANCZOS)
 
 
 def connected_panel(kind):
     im, d = new_layer()
     d.rectangle([0, 72 * SS, W * SS, H * SS], fill=(2, 4, 10, 232))
-    text(d, (W // 2, 130), "CONNECTED", 40, YELLOW)
+    text(d, (W // 2, 130), "CONNECTED", 44, INK)
     x1, x2, y = 300, W - 300, 300
     out = im.resize((W, H), Image.LANCZOS)
     cab, cx0, cy0 = draw_cable((x1, y), (x2, y), spec.CABLE_COLOURS[3], 2.2, clip=(0, 72, W, H))
@@ -845,8 +838,8 @@ def chip_image(label, state):
     im = Image.new("RGBA", (w * S, h * S), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     fill = {0: (8, 12, 20, 235), 1: YELLOW + (140,), 2: YELLOW + (255,)}[state]
-    d.rounded_rectangle([S, S, w * S - S, h * S - S], radius=9 * S, fill=fill, outline=(150, 175, 205, 255), width=2 * S)
-    d.text((w * S / 2, h * S / 2), label, font=font(21 * S), fill=(8, 12, 20) if state == 2 else INK, anchor="mm")
+    d.rounded_rectangle([S, S, w * S - S, h * S - S], radius=9 * S, fill=fill, outline=(200, 200, 205, 255), width=2 * S)
+    d.text((w * S / 2, h * S / 2), label, font=font(24 * S), fill=(8, 12, 20) if state == 2 else INK, anchor="mm")
     return im.resize((w, h), Image.LANCZOS)
 
 
@@ -857,14 +850,14 @@ def matrix_panel():
     out = None
     for di, dd in enumerate(spec.DESTS):
         x, _ = spec.mx_cell_pos(0, di)
-        text(d, (x, 160), dd[1], 20, YELLOW)
+        text(d, (x, 160), dd[1], 26, INK)
     for si, s in enumerate(spec.SRCS):
         x, y = spec.mx_cell_pos(si, 0)
-        text(d, (x - 70, y), s[1], 20, INK, "rm")
+        text(d, (x - 70, y), s[1], 26, INK, "rm")
         for di in range(spec.N_DEST):
             cx, cy = spec.mx_cell_pos(si, di)
             d.rounded_rectangle([(cx - 52) * SS, (cy - 15) * SS, (cx + 52) * SS, (cy + 15) * SS], radius=7 * SS,
-                                fill=(2, 5, 10, 200), outline=(60, 84, 110, 255), width=SS)
+                                fill=(0, 0, 0, 170), outline=(130, 130, 136, 255), width=SS)
     out = im.resize((W, H), Image.LANCZOS)
     for fi, f in enumerate(spec.FILTERS):
         cx, cy = spec.mx_chip_pos(fi)
@@ -881,7 +874,7 @@ def cell_image(state):
         d.rounded_rectangle([S, S, w * S - S, h * S - S], radius=7 * S, fill=YELLOW + (110,), outline=YELLOW + (255,), width=2 * S)
         sym = "+"
     elif state == 2:
-        c = (255, 150, 90)
+        c = (150, 150, 156)
         d.rounded_rectangle([S, S, w * S - S, h * S - S], radius=7 * S, fill=c + (110,), outline=c + (255,), width=2 * S)
         sym = "-"
     else:

@@ -337,7 +337,7 @@ def write_layout():
         L.append('button cx=%d cy=%d label="" key=go_%s when=pg_overview:1' % (x + w // 2, y + h // 2 + Y0, k))
     for k in S.TILE_VIEWS:
         x, y, w, h = S.TILES[k]
-        L.append('readout cx=%d cy=%d w=%d h=34 label="" key=ts_%s box=0 tsize=24 when=pg_overview:1' % (
+        L.append('readout cx=%d cy=%d w=%d h=34 label="" key=ts_%s box=0 tsize=26 when=pg_overview:1' % (
             x + w // 2, y + h - 30 + Y0, w - 20, k))
     L.append('readout cx=640 cy=%d w=280 h=34 label="" key=cpu_info box=0 tsize=26 when=pg_overview:1' % (S.STRIP_Y + 40 + Y0))
     # patch bay jacks

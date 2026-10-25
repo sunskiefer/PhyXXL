@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.2
+Neutral look: no panels, white soft light on the knobs, larger text.
+
 ## 0.1.1
 Skin titles no longer carry maker names.
 
