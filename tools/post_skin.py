@@ -28,13 +28,13 @@ import spec  # noqa: E402
 W, H = 1280, 628
 FONT = os.path.join(ROOT, "art", "fonts", "TitilliumWeb-SemiBold.ttf")
 SRC = os.path.join(ROOT, "art", "src")
-PANEL = (10, 14, 24)
-HEADER = (6, 9, 16)
-LINE = (120, 170, 220)
-INK = (236, 242, 252)
-DIM = (150, 168, 192)
+PANEL = (18, 18, 18)
+HEADER = (8, 8, 8)
+LINE = (122, 122, 122)     # the mock's line grey
+INK = (238, 238, 238)
+DIM = (184, 184, 184)
 YELLOW = (240, 240, 240)       # the lit colour (kept under the name the shared helpers use): plain white, as the overview mock
-LED_OFF = (60, 60, 64)
+LED_OFF = (60, 60, 60)
 SS = 2   # supersampling for drawn art
 TAB = "PhyXXL|PhyXXL"
 KNOB_SPAN = 150   # degrees each side of 12 o'clock
@@ -137,20 +137,16 @@ def push_button_image(on, w, h, lamp=True):
 
 
 def nav_image(label, on, w, h):
+    """a mock button: a dark rounded cap with the grey line; pressed it lightens"""
     S = 4
     im = Image.new("RGBA", (w * S, h * S), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    d.rounded_rectangle([0, 0, w * S - 1, h * S - 1], radius=8 * S, fill=(YELLOW if on else (20, 20, 20)) + (255,),
-                        outline=(140, 140, 140, 255), width=2 * S)
-    ink = (17, 17, 17, 255) if on else INK + (255,)
-    if label in ("<", ">"):
-        cx, cy, s = w * S / 2, h * S / 2, h * S * 0.26
-        pts = [(cx - s * 0.6, cy - s), (cx - s * 0.6, cy + s), (cx + s * 0.8, cy)] if label == ">" else \
-              [(cx + s * 0.6, cy - s), (cx + s * 0.6, cy + s), (cx - s * 0.8, cy)]
-        d.polygon(pts, fill=ink)
-    else:
-        f = font(22 * S)
-        d.text((w * S / 2, h * S / 2), label, font=f, fill=ink, anchor="mm")
+    d.rounded_rectangle([0, 0, w * S - 1, h * S - 1], radius=8 * S, fill=((84, 84, 84) if on else (22, 22, 22)) + (255,),
+                        outline=LINE + (255,), width=2 * S)
+    size = 28 if label in ("<", ">") else 24
+    while size > 16 and d.textlength(label, font=font(size * S)) > (w - 16) * S:
+        size -= 1
+    d.text((w * S / 2, h * S / 2), label, font=font(size * S), fill=INK + (255,), anchor="mm")
     return im.resize((w, h), Image.LANCZOS)
 
 
@@ -159,8 +155,8 @@ def blank(w, h):
 
 
 def tile_highlight(w, h):
-    im = Image.new("RGBA", (w, h), YELLOW + (50,))
-    ImageDraw.Draw(im).rectangle([0, 0, w - 1, h - 1], outline=YELLOW + (255,), width=4)
+    im = Image.new("RGBA", (w, h), (255, 255, 255, 40))
+    ImageDraw.Draw(im).rectangle([0, 0, w - 1, h - 1], outline=(255, 255, 255, 255), width=3)
     return im
 
 
@@ -567,7 +563,7 @@ def write_knob_strips(skin):
                     d.ellipse([x - rr * 2.2, y - rr * 2.2, x + rr * 2.2, y + rr * 2.2], fill=(255, 255, 255, 28))
                     d.ellipse([x - rr * 1.6, y - rr * 1.6, x + rr * 1.6, y + rr * 1.6], fill=(255, 255, 255, 55))
                 d.ellipse([x - rr, y - rr, x + rr, y + rr], fill=(236, 236, 236, 255) if lit else (88, 90, 94, 255),
-                          outline=(20, 26, 36, 255), width=max(1, S // 2))
+                          outline=(20, 20, 20, 255), width=max(1, S // 2))
             rot = b.rotate(-ang, resample=Image.BICUBIC)
             fr.alpha_composite(rot, ((F * S - rot.size[0]) // 2, (F * S - rot.size[1]) // 2))
             strip.paste(fr.resize((F, F), Image.LANCZOS), (0, i * F))
@@ -588,20 +584,20 @@ def slider_strip(w, h, frames, vertical):
         if vertical:
             gx = w * S / 2.0
             top, bot = 12 * S, h * S - 12 * S
-            d.rounded_rectangle([gx - 5 * S, top, gx + 5 * S, bot], radius=5 * S, fill=(8, 12, 20, 255), outline=(110, 124, 144, 255), width=S)
+            d.rounded_rectangle([gx - 5 * S, top, gx + 5 * S, bot], radius=5 * S, fill=(8, 8, 8, 255), outline=(122, 122, 122, 255), width=S)
             ty = bot - (bot - top) * t
             if bot - S - ty > 1:
                 d.rounded_rectangle([gx - 3 * S, ty, gx + 3 * S, bot - S], radius=min(3 * S, (bot - S - ty) / 2), fill=YELLOW + (230,))
-            d.rounded_rectangle([gx - 17 * S, ty - 9 * S, gx + 17 * S, ty + 9 * S], radius=5 * S, fill=(40, 46, 58, 255), outline=(190, 205, 225, 255), width=S)
+            d.rounded_rectangle([gx - 17 * S, ty - 9 * S, gx + 17 * S, ty + 9 * S], radius=5 * S, fill=(44, 44, 44, 255), outline=(200, 200, 200, 255), width=S)
             d.line([gx - 11 * S, ty, gx + 11 * S, ty], fill=YELLOW + (255,), width=2 * S)
         else:
             gy = h * S / 2.0
             lft, rgt = 14 * S, w * S - 14 * S
-            d.rounded_rectangle([lft, gy - 5 * S, rgt, gy + 5 * S], radius=5 * S, fill=(8, 12, 20, 255), outline=(110, 124, 144, 255), width=S)
+            d.rounded_rectangle([lft, gy - 5 * S, rgt, gy + 5 * S], radius=5 * S, fill=(8, 8, 8, 255), outline=(122, 122, 122, 255), width=S)
             tx = lft + (rgt - lft) * t
             if tx - lft - S > 1:
                 d.rounded_rectangle([lft + S, gy - 3 * S, tx, gy + 3 * S], radius=min(3 * S, (tx - lft - S) / 2), fill=YELLOW + (230,))
-            d.rounded_rectangle([tx - 9 * S, gy - 13 * S, tx + 9 * S, gy + 13 * S], radius=5 * S, fill=(40, 46, 58, 255), outline=(190, 205, 225, 255), width=S)
+            d.rounded_rectangle([tx - 9 * S, gy - 13 * S, tx + 9 * S, gy + 13 * S], radius=5 * S, fill=(44, 44, 44, 255), outline=(200, 200, 200, 255), width=S)
             d.line([tx, gy - 9 * S, tx, gy + 9 * S], fill=YELLOW + (255,), width=2 * S)
         strip.paste(fr.resize((w, h), Image.LANCZOS), (0, i * h))
     return strip
@@ -620,7 +616,7 @@ def restyle_sliders(skin):
                 os.path.join(skin.dir, data["filmStrip"]), optimize=True)
 
 
-def ball_image(on, size=44):
+def ball_image(on, size=48):
     """a step button: the art's glass ball, tinted the accent when on"""
     b = art("step_btn.png")
     bb = b.split()[3].getbbox()
@@ -643,10 +639,33 @@ def text(d, xy, s, size, fill=INK, anchor="mm"):
     d.text((xy[0] * SS, xy[1] * SS), s, font=font(size * SS), fill=fill, anchor=anchor)
 
 
-def frame_box(d, x0, y0, x1, y1, label=None, fill=(4, 8, 16, 150), line=(200, 200, 205, 255), r=14):
-    d.rounded_rectangle([x0 * SS, y0 * SS, x1 * SS, y1 * SS], radius=r * SS, fill=fill, outline=line, width=2 * SS)
+def frame_box(d, x0, y0, x1, y1, label=None, fill=(8, 8, 8, 150), line=(90, 90, 90, 255), r=10, dashed=False):
+    """the mock's box: near black, a grey line (dashed for the response display)"""
+    d.rounded_rectangle([x0 * SS, y0 * SS, x1 * SS, y1 * SS], radius=r * SS, fill=fill)
+    if dashed:
+        dash_rect(d, x0, y0, x1, y1, line)
+    else:
+        d.rounded_rectangle([x0 * SS, y0 * SS, x1 * SS, y1 * SS], radius=r * SS, outline=line, width=2 * SS)
     if label:
-        text(d, (x0 + 18, y0 + 20), label, 20, DIM, "lm")
+        text(d, (x0 + 14, y0 + 16), label, 22, DIM, "lm")
+
+
+def dash_rect(d, x0, y0, x1, y1, col, dash=9, gap=6):
+    def hline(y, a, b):
+        x = a
+        while x < b:
+            d.line([(x * SS, y * SS), (min(x + dash, b) * SS, y * SS)], fill=col, width=2 * SS)
+            x += dash + gap
+
+    def vline(x, a, b):
+        y = a
+        while y < b:
+            d.line([(x * SS, y * SS), (x * SS, min(y + dash, b) * SS)], fill=col, width=2 * SS)
+            y += dash + gap
+    hline(y0, x0, x1)
+    hline(y1, x0, x1)
+    vline(x0, y0, y1)
+    vline(x1, y0, y1)
 
 
 # ------------------------------------------------------------------------------------------------ panels
@@ -666,11 +685,15 @@ def new_layer():
     return im, ImageDraw.Draw(im)
 
 
+TITLES = {"out": "DRIVE + OUTPUT", "moda": "MOD SOURCES A", "mstep": "MOD B1  STEP SEQUENCER", "mfunc": "MOD B2  FUNCTION GENERATOR",
+          "mgate": "MOD B3  GATE SEQ + RANDOM", "matrix": "MOD MATRIX", "bayM": "PATCH BAY  MODULATION", "bayA": "PATCH BAY  AUDIO"}
+
+
 def header(d, title, sub=None):
-    if title == "PhyXXL":
-        text(d, (W // 2, 38), title, 38, INK)
-    else:
-        text(d, (430, 38), title, 34, INK, "lm")
+    text(d, (640, 28), title, 34, INK)
+    cx, cy, w = spec.HDR_TOUCH
+    d.rounded_rectangle([(cx - w // 2) * SS, (cy - 22) * SS, (cx + w // 2) * SS, (cy + 22) * SS], radius=8 * SS,
+                        fill=(22, 22, 22, 255), outline=LINE + (255,), width=2 * SS)
 
 
 def control_labels(d, vkey):
@@ -679,75 +702,77 @@ def control_labels(d, vkey):
             continue
         x, y = c["cx"], c["cy"]
         if c["kind"] == "knob":
-            text(d, (x, y - c["r"] - 26), short_label(c), 28, INK)
-        elif c["kind"] == "toggle":
-            if not is_ball(c):
-                text(d, (x, y - 34), short_label(c), 28, INK)
-            else:
-                text(d, (x, y + 32), re.search(r"\d+$", c["key"]).group(0), 22, DIM)
-        elif c["kind"] == "enum":
-            text(d, (x, y - c["h"] // 2 - 16), short_label(c), 28, INK)
-        elif c["kind"] == "slider":
-            if c.get("vertical", True):
-                text(d, (x, y + c["sh"] // 2 + 38), short_label(c), 24, INK)
-            else:
-                text(d, (x, y - 28), short_label(c), 28, INK)
-    if vkey == "mgate":
-        text(d, (58, 186), "GATE", 22, INK, "lm")
-        text(d, (58, 266), "LEGATO", 22, INK, "lm")
+            text(d, (x, y + c["r"] + 26), short_label(c), 28, INK)
+        elif c["kind"] in ("toggle", "enum") and not is_ball(c):
+            text(d, (x, y + 82), short_label(c), 28, INK)
 
 
 def curve_frame(d):
     x, y = spec.RC_XY
     w, h = spec.RC_COLS * spec.RC_CW, spec.RC_ROWS * spec.RC_RH
-    frame_box(d, x - 14, y - 12, x + w + 14, y + h + 38, None, fill=(2, 5, 10, 190), r=12)
+    bx, by, bw, bh = spec.RESP_BOX
+    frame_box(d, bx, by, bx + bw, by + bh, None, dashed=True)
+    text(d, (bx + 16, by + 16), "RESPONSE", 22, DIM, "lm")
     for hz, lab in ((20, "20"), (100, "100"), (1000, "1k"), (10000, "10k"), (20000, "20k")):
         xx = x + w * math.log(hz / 20.0) / math.log(1000.0)
-        d.line([xx * SS, (y + h + 2) * SS, xx * SS, (y + h + 8) * SS], fill=(200, 200, 205, 255), width=SS)
-        text(d, (min(xx, x + w - 8), y + h + 24), lab, 20, DIM)
-    text(d, (x - 28, y + 10), "dB", 20, DIM)
+        text(d, (min(max(xx, x + 12), x + w - 12), y + h + 22), lab, 22, DIM)
 
 
 def view_panel(i, v):
     vkey = v[0]
     im, d = new_layer()
-    header(d, v[1])
+    header(d, spec.FLABEL.get(vkey) or TITLES.get(vkey, v[1]))
     if vkey in spec.FKEYS:
         curve_frame(d)
+        x, y, w, h = spec.AUD_BAR
+        frame_box(d, x, y, x + w, y + h)
+        text(d, (29, y + h // 2), "AUDIO", 24, DIM, "lm")
+        x, y, w, h = spec.MOD_BAR
+        frame_box(d, x, y, x + w, y + h)
+        text(d, (29, y + 18), "MOD ON THIS FILTER", 24, DIM, "lm")
     control_labels(d, vkey)
     if vkey == "moda":
-        for lab, x0, x1 in (("LFO", 40, 400), ("ENVELOPE", 440, 840), ("FOLLOWER", 880, 1240)):
-            text(d, (x0, 112), lab, 26, INK, "lm")
+        text(d, (16, 77), "LFO", 26, DIM, "lm")
+        text(d, (spec.slot(4) - 85, 77), "ENVELOPE (AHD)", 26, DIM, "lm")
+        text(d, (16, 287), "ENV FOLLOWER", 26, DIM, "lm")
+        text(d, (1200, 155), "ACTIVE", 24, DIM, "lm")
     if vkey == "out":
-        text(d, (60, 112), "AUDIO ROUTING", 26, INK, "lm")
+        text(d, (16, 277), "QUICK AUDIO CHAIN", 26, DIM, "lm")
+    if vkey == "mstep":
+        frame_box(d, 16, 67, 1264, 294, None)
     if vkey == "mfunc":
-        pass
+        frame_box(d, 16, 67, 883, 358, None)
+    if vkey == "mgate":
+        text(d, (16, 265), "GATE SEQUENCER", 26, DIM, "lm")
+        text(d, (spec.slot(4) - 85, 265), "RANDOM / S&H", 26, DIM, "lm")
+        text(d, (20, spec.GATE_Y1), "ENV", 22, DIM, "lm")
+        text(d, (20, spec.GATE_Y2), "LFO", 22, DIM, "lm")
     return im.resize((W, H), Image.LANCZOS)
 
 
 def overview_panel(sk):
-    """the overview: the art's tile frames with each tile's name; the live status line is the engine's ts_ readout"""
+    """the overview of the mock: the art's tile frames (unchanged) with each tile's name; the live status line is the engine's ts_ readout"""
     im, d = new_layer()
-    header(d, "PhyXXL")
-    control_labels(d, "overview")
+    header(d, "OVERVIEW")
     borders = tile_borders()
-    order = list(range(14))
     names = {k: spec.VIEWS[spec.VIEW_NO[k]][2] for k in spec.TILE_VIEWS}
-    border_of = {k: borders[min(i, 13)] if i < 14 else borders[6] for i, k in enumerate(spec.TILE_VIEWS)}
+    border_of = {k: borders[min(i, 13)] for i, k in enumerate(spec.TILE_VIEWS)}
     border_of["bayM"] = borders[6]
     out = im.resize((W, H), Image.LANCZOS)
     od = ImageDraw.Draw(out)
     for k in spec.TILE_VIEWS:
         tx, ty, tw, th = spec.TILES[k]
         shade = Image.new("RGBA", (tw, th), (0, 0, 0, 0))
-        ImageDraw.Draw(shade).rounded_rectangle([2, 2, tw - 3, th - 3], radius=18, fill=(2, 4, 10, 205))
+        ImageDraw.Draw(shade).rounded_rectangle([2, 2, tw - 3, th - 3], radius=16, fill=(6, 6, 8, 255))
         out.alpha_composite(shade, (tx, ty))
         out.alpha_composite(nine_slice(border_of[k], tw, th), (tx, ty))
-        od.text((tx + 20, ty + 38), names[k], font=font(34), fill=INK, anchor="lm")
-    od.text((spec.DATA_POS[0] - 80, spec.DATA_POS[1]), "DATA", font=font(26), fill=INK, anchor="rm")
-    od.text((90, spec.STRIP_Y + 14), "IN", font=font(24), fill=DIM, anchor="mm")
-    od.text((330, spec.STRIP_Y + 14), "OUT", font=font(24), fill=DIM, anchor="mm")
-    od.text((640, spec.STRIP_Y + 14), "CPU", font=font(24), fill=DIM, anchor="mm")
+        od.text((tx + 16, ty + 34), names[k], font=font(34), fill=INK, anchor="lm")
+    dx, dy = spec.DATA_POS
+    od.text((dx, dy + 64), "DATA", font=font(28), fill=INK, anchor="mm")
+    sy = spec.STRIP_Y + 19
+    od.text((16, sy), "IN", font=font(24), fill=DIM, anchor="lm")
+    od.text((262, sy), "OUT", font=font(24), fill=DIM, anchor="lm")
+    od.text((520, sy), "CPU", font=font(24), fill=DIM, anchor="lm")
     return out
 
 
@@ -755,11 +780,11 @@ def overview_panel(sk):
 def hex_socket(d, x, y, r=spec.JACK_R, dim=False, accent=False):
     pts = lambda rad: [((x + rad * math.cos(math.radians(60 * k + 30))) * SS, (y + rad * math.sin(math.radians(60 * k + 30))) * SS)
                        for k in range(6)]
-    d.polygon(pts(r), fill=(86, 96, 112) if dim else (168, 182, 202))
-    d.polygon(pts(r - 3), outline=(40, 50, 64), width=SS)
+    d.polygon(pts(r), fill=(96, 96, 96) if dim else (170, 170, 170))
+    d.polygon(pts(r - 3), outline=(60, 60, 60), width=SS)
     rr = r - 6
-    d.ellipse([(x - rr) * SS, (y - rr) * SS, (x + rr) * SS, (y + rr) * SS], fill=(70, 78, 92) if dim else (118, 130, 150))
-    d.ellipse([(x - 9) * SS, (y - 9) * SS, (x + 9) * SS, (y + 9) * SS], fill=(2, 4, 8))
+    d.ellipse([(x - rr) * SS, (y - rr) * SS, (x + rr) * SS, (y + rr) * SS], fill=(70, 70, 70) if dim else (130, 130, 130))
+    d.ellipse([(x - 6) * SS, (y - 6) * SS, (x + 6) * SS, (y + 6) * SS], fill=(4, 4, 4))
 
 
 def cable_for(index):
@@ -767,50 +792,52 @@ def cable_for(index):
 
 
 def bay_panel(kind):
-    """kind 'M' or 'A': the sockets and their names"""
+    """kind 'M' or 'A': the sockets and their names, in the mock's boxes"""
     im, d = new_layer()
-    header(d, "PATCH BAY")
+    header(d, "PATCH BAY  MODULATION" if kind == "M" else "PATCH BAY  AUDIO")
     if kind == "M":
-        text(d, (142, 97), "SOURCES", 22, DIM)
+        frame_box(d, 16, 110, 269, 558, "MOD OUT")
+        frame_box(d, 287, 110, 1264, 558, "FILTER INPUTS")
         for i, s in enumerate(spec.SRCS):
             x, y = spec.mod_out_pos(i)
             hex_socket(d, x, y, spec.JACK_R)
-            text(d, (x + 30, y), s[1], 28, INK, "lm")
+            text(d, (27, y), s[1], 26, INK, "lm")
         for fi, f in enumerate(spec.FILTERS):
             x, _ = spec.mod_in_pos(fi, 0)
-            text(d, (x, 118), f[3], 26, INK)
+            text(d, (x, 146), spec.FSHORT[f[0]], 24, INK)
             for di, dk in enumerate(spec.DEST_KEYS):
                 xx, yy = spec.mod_in_pos(fi, di)
                 hex_socket(d, xx, yy, spec.JACK_R)
-                text(d, (xx, yy + 25), spec.DESTS[di][1], 18, DIM)
+        for di in range(spec.N_DEST):
+            text(d, (297, spec.mod_in_pos(0, di)[1]), spec.DESTS[di][1], 26, INK, "lm")
     else:
-        text(d, (330, 97), "OUTPUTS", 22, DIM)
-        text(d, (950, 97), "INPUTS", 22, DIM)
+        frame_box(d, 16, 110, 416, 578, "AUDIO OUT")
+        frame_box(d, 864, 110, 1264, 578, "AUDIO IN")
         for i, a in enumerate(spec.AUDIO_OUTS):
             x, y = spec.aud_out_pos(i)
             hex_socket(d, x, y, spec.JACK_R)
-            text(d, (x - 30, y), a[1], 28, INK, "rm")
+            text(d, (40, y), a[1], 28, INK, "lm")
         for i, b in enumerate(spec.AUDIO_INS):
             x, y = spec.aud_in_pos(i)
             hex_socket(d, x, y, spec.JACK_R)
-            text(d, (x + 30, y), b[1], 28, INK, "lm")
+            text(d, (x + 33, y), b[1], 28, INK, "lm")
+    frame_box(d, 16, 581, 1264, 621)
     return im.resize((W, H), Image.LANCZOS)
 
 
 def connected_panel(kind):
     im, d = new_layer()
-    d.rectangle([0, 72 * SS, W * SS, H * SS], fill=(2, 4, 10, 232))
+    d.rectangle([0, 56 * SS, W * SS, H * SS], fill=(8, 8, 8, 240))
     text(d, (W // 2, 130), "CONNECTED", 44, INK)
     x1, x2, y = 300, W - 300, 300
     out = im.resize((W, H), Image.LANCZOS)
-    cab, cx0, cy0 = draw_cable((x1, y), (x2, y), spec.CABLE_COLOURS[3], 2.2, clip=(0, 72, W, H))
+    cab, cx0, cy0 = draw_cable((x1, y), (x2, y), spec.CABLE_COLOURS[3], 2.2, clip=(0, 56, W, H))
     out.alpha_composite(cab, (cx0, cy0))
-    d2 = ImageDraw.Draw(out)
     big = Image.new("RGBA", (W * SS, H * SS), (0, 0, 0, 0))
     bd = ImageDraw.Draw(big)
     for x, lab in ((x1, "SOURCE" if kind == "M" else "OUTPUT"), (x2, "INPUT")):
         hex_socket(bd, x, y, 40)
-        text(bd, (x, y + 84), lab, 24, DIM)
+        text(bd, (x, y + 84), lab, 26, DIM)
     big = big.resize((W, H), Image.LANCZOS)
     out.alpha_composite(big)
     return out
@@ -827,41 +854,42 @@ def ring_img(r=26, w=5, colour=YELLOW):
 def dim_img(r=20):
     S = 4
     im = Image.new("RGBA", (2 * r * S, 2 * r * S), (0, 0, 0, 0))
-    ImageDraw.Draw(im).ellipse([0, 0, 2 * r * S - 1, 2 * r * S - 1], fill=(6, 10, 18, 190))
+    ImageDraw.Draw(im).ellipse([0, 0, 2 * r * S - 1, 2 * r * S - 1], fill=(8, 8, 8, 190))
     return im.resize((2 * r, 2 * r), Image.LANCZOS)
 
 
 def chip_image(label, state):
     """a matrix filter chip: 0 plain, 1 pressed, 2 chosen"""
-    w, h = 140, 40
+    w, h = spec.MX_CHIP
     S = 3
     im = Image.new("RGBA", (w * S, h * S), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    fill = {0: (8, 12, 20, 235), 1: YELLOW + (140,), 2: YELLOW + (255,)}[state]
-    d.rounded_rectangle([S, S, w * S - S, h * S - S], radius=9 * S, fill=fill, outline=(200, 200, 205, 255), width=2 * S)
-    d.text((w * S / 2, h * S / 2), label, font=font(24 * S), fill=(8, 12, 20) if state == 2 else INK, anchor="mm")
+    fill = {0: (22, 22, 22, 255), 1: (110, 110, 110, 255), 2: (238, 238, 238, 255)}[state]
+    d.rounded_rectangle([S, S, w * S - S, h * S - S], radius=8 * S, fill=fill, outline=LINE + (255,), width=2 * S)
+    d.text((w * S / 2, h * S / 2), label, font=font(26 * S), fill=(17, 17, 17) if state == 2 else INK, anchor="mm")
     return im.resize((w, h), Image.LANCZOS)
 
 
 def matrix_panel():
     im, d = new_layer()
     header(d, "MOD MATRIX")
-    frame_box(d, 14, 84, 1266, 540, None)
-    out = None
+    x, y, w, h = spec.MX_BAR
+    frame_box(d, x, y, x + w, y + h)
+    cw, ch = spec.MX_CELL
     for di, dd in enumerate(spec.DESTS):
         x, _ = spec.mx_cell_pos(0, di)
-        text(d, (x, 160), dd[1], 26, INK)
+        text(d, (x, 126), dd[1], 26, DIM)
     for si, s in enumerate(spec.SRCS):
         x, y = spec.mx_cell_pos(si, 0)
-        text(d, (x - 70, y), s[1], 26, INK, "rm")
+        text(d, (20, y), s[1], 26, DIM, "lm")
         for di in range(spec.N_DEST):
             cx, cy = spec.mx_cell_pos(si, di)
-            d.rounded_rectangle([(cx - 52) * SS, (cy - 15) * SS, (cx + 52) * SS, (cy + 15) * SS], radius=7 * SS,
-                                fill=(0, 0, 0, 170), outline=(130, 130, 136, 255), width=SS)
+            d.rounded_rectangle([(cx - cw // 2) * SS, (cy - ch // 2) * SS, (cx + cw // 2) * SS, (cy + ch // 2) * SS],
+                                radius=6 * SS, fill=(28, 28, 28, 255), outline=(74, 74, 74, 255), width=2 * SS)
     out = im.resize((W, H), Image.LANCZOS)
     for fi, f in enumerate(spec.FILTERS):
         cx, cy = spec.mx_chip_pos(fi)
-        out.alpha_composite(chip_image(f[3], 0), (cx - 70, cy - 20))
+        out.alpha_composite(chip_image(f[3], 0), (cx - spec.MX_CHIP[0] // 2, cy - spec.MX_CHIP[1] // 2))
     return out
 
 
@@ -871,17 +899,16 @@ def cell_image(state):
     im = Image.new("RGBA", (w * S, h * S), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     if state == 1:
-        d.rounded_rectangle([S, S, w * S - S, h * S - S], radius=7 * S, fill=YELLOW + (110,), outline=YELLOW + (255,), width=2 * S)
+        d.rounded_rectangle([S, S, w * S - S, h * S - S], radius=6 * S, fill=(70, 70, 70, 255), outline=(238, 238, 238, 255), width=2 * S)
         sym = "+"
     elif state == 2:
-        c = (150, 150, 156)
-        d.rounded_rectangle([S, S, w * S - S, h * S - S], radius=7 * S, fill=c + (110,), outline=c + (255,), width=2 * S)
+        d.rounded_rectangle([S, S, w * S - S, h * S - S], radius=6 * S, fill=(40, 40, 40, 255), outline=(160, 160, 160, 255), width=2 * S)
         sym = "-"
     else:
-        d.rounded_rectangle([S, S, w * S - S, h * S - S], radius=7 * S, fill=(255, 255, 255, 60), outline=(255, 255, 255, 255), width=4 * S)
+        d.rounded_rectangle([S, S, w * S - S, h * S - S], radius=6 * S, fill=(255, 255, 255, 40), outline=(255, 255, 255, 255), width=3 * S)
         sym = ""
     if sym:
-        d.text((w * S / 2, h * S / 2), sym, font=font(26 * S), fill=(255, 255, 255, 255), anchor="mm")
+        d.text((w * S / 2, h * S / 2), sym, font=font(28 * S), fill=(255, 255, 255, 255), anchor="mm")
     return im.resize((w, h), Image.LANCZOS)
 
 
@@ -891,7 +918,7 @@ def led_bar(n, w=176, h=16):
     d = ImageDraw.Draw(im)
     seg = w / 8.0
     for k in range(8):
-        col = YELLOW if k < n else (28, 40, 56)
+        col = YELLOW if k < n else (44, 44, 44)
         if k >= 6 and k < n:
             col = (255, 90, 80)
         d.rounded_rectangle([(k * seg + 2) * S, 0, ((k + 1) * seg - 2) * S, h * S - 1], radius=3 * S, fill=col + (255,))
@@ -915,8 +942,8 @@ def curve_strip():
                 y = y0 + (y1 - y0) * (j / float(n - 1) if n > 1 else 0)
                 x = CW / 2.0
                 rr = 2.4
-                d.ellipse([(x - rr * 2) * S, (y - rr * 2) * S, (x + rr * 2) * S, (y + rr * 2) * S], fill=YELLOW + (50,))
-                d.ellipse([(x - rr) * S, (y - rr) * S, (x + rr) * S, (y + rr) * S], fill=(216, 238, 255, 255))
+                d.ellipse([(x - rr * 2) * S, (y - rr * 2) * S, (x + rr * 2) * S, (y + rr * 2) * S], fill=(255, 255, 255, 40))
+                d.ellipse([(x - rr) * S, (y - rr) * S, (x + rr) * S, (y + rr) * S], fill=(235, 235, 235, 255))
             strip.paste(fr.resize((CW, N * RH), Image.LANCZOS), (0, k * N * RH))
             k += 1
     assert k == spec.RC_FRAMES
@@ -935,9 +962,9 @@ def ruler_strip():
             x, y = (c + 0.5) * spec.RC_CW, h / 2.0
             lit = (k == c + 1)
             rr = 4.0 if lit else 1.3
-            col = (255, 255, 255, 255) if lit else (92, 112, 138, 255)
+            col = (255, 255, 255, 255) if lit else (110, 110, 110, 255)
             if lit:
-                d.ellipse([(x - 8) * S, (y - 8) * S, (x + 8) * S, (y + 8) * S], fill=YELLOW + (90,))
+                d.ellipse([(x - 8) * S, (y - 8) * S, (x + 8) * S, (y + 8) * S], fill=(255, 255, 255, 60))
             d.ellipse([(x - rr) * S, (y - rr) * S, (x + rr) * S, (y + rr) * S], fill=col)
         strip.paste(fr.resize((w, h), Image.LANCZOS), (0, k * h))
     return strip
@@ -985,14 +1012,12 @@ def rect_for(key):
     """where a framework button sits and how big it is (skin pixels), by what it does"""
     def around(x, y, w, h):
         return (int(x - w // 2), int(y - h // 2), int(w), int(h))
-    if key == "nav_zoom":
-        return around(90, 38, 150, 52)
-    if key in ("nav_prev", "nav_next"):
+    if key in spec.NAV_SIZE:
         x, y = {k: (x, y) for k, _, x, y in spec.NAV}[key]
-        return around(x, y, 90, 52)
+        return around(x, y, *spec.NAV_SIZE[key])
     for k, _, x, y, w in spec.CHIPS:
         if key == k:
-            return around(x, y, w, 48)
+            return around(x, y, w, 40)
     for k, _, x, y, w, h in spec.FILTER_BTNS:
         if key == k:
             return around(x, y, w, h)
@@ -1007,11 +1032,11 @@ def rect_for(key):
         return tuple(spec.PK_UNPLUG)
     for k, _, x, y in spec.MX_BTNS:
         if key == k:
-            return around(x, y, 96, 44)
+            return around(x, y, *spec.MX_BTN)
     m = re.match(r"mxf_(\d+)$", key)
     if m:
         x, y = spec.mx_chip_pos(int(m.group(1)))
-        return around(x, y, 140, 40)
+        return around(x, y, *spec.MX_CHIP)
     if key.startswith("go_") and key[3:] in spec.TILES:
         return tuple(spec.TILES[key[3:]])
     m = re.match(r"tm_(\w+)$", key)
@@ -1215,7 +1240,7 @@ def main():
                 if s["componentData"]["type"] == "Focus":
                     s["bounds"]["bounds"] = bstr(0, 0, 60, 48) if narrow else bstr(0, 0, 130, 48)
                 if s["componentData"]["type"] == "Button":
-                    s["bounds"]["bounds"] = bstr(8, 2, 44, 44) if narrow else bstr(23, 4, 84, 40)
+                    s["bounds"]["bounds"] = bstr(6, 0, 48, 48) if narrow else bstr(23, 4, 84, 40)
                     s["componentData"]["data"]["onImage"] = "px_ball_on.png" if narrow else "px_switch_on.png"
                     s["componentData"]["data"]["offImage"] = "px_ball_off.png" if narrow else "px_switch_off.png"
     for c in spec.CONTROLS:
@@ -1223,8 +1248,26 @@ def main():
             for inst in skin.instances(c["key"]):
                 if is_ball(c):
                     inst["bounds"]["bounds"] = bstr(c["cx"] - 30, c["cy"] - 24, 60, 48)
+                elif c["key"] in ("limit_res", "bypass"):
+                    inst["bounds"]["bounds"] = bstr(c["cx"] - 60, c["cy"] - 20, 120, 40)
                 else:
                     inst["bounds"]["bounds"] = bstr(c["cx"] - 65, c["cy"] - 24, 130, 48)
+    for key, label in (("limit_res", "Limit res."), ("bypass", "Bypass")):
+        insts = skin.instances(key)
+        base = insts[0]["componentData"]["type"]
+        dk = "pxToggle_" + key
+        d2 = json.loads(json.dumps(skin.defs[base]))
+        for s2 in d2["componentsData"]:
+            s2["bounds"]["bounds"] = bstr(0, 0, 120, 40)
+            if s2["componentData"]["type"] == "Button":
+                s2["componentData"]["data"]["onImage"] = "px_%s_on.png" % key
+                s2["componentData"]["data"]["offImage"] = "px_%s_off.png" % key
+        skin.defs_list.append({"key": dk, "value": d2})
+        skin.defs[dk] = d2
+        nav_image(label, True, 120, 40).save(os.path.join(folder, "px_%s_on.png" % key))
+        nav_image(label, False, 120, 40).save(os.path.join(folder, "px_%s_off.png" % key))
+        for inst in insts:
+            inst["componentData"]["type"] = dk
     restyle_triggers(skin, folder)
     fix_popups(skin, folder)
 
@@ -1309,7 +1352,7 @@ def main():
     for fi in range(spec.N_FLT):
         chip_image(spec.FILTERS[fi][3], 2).save(os.path.join(folder, "px_chip_%d.png" % fi))
         cx, cy = spec.mx_chip_pos(fi)
-        over.append(image_instance("Chip", "px_chip_%d.png" % fi, cx - 70, cy - 20, 140, 40,
+        over.append(image_instance("Chip", "px_chip_%d.png" % fi, cx - spec.MX_CHIP[0] // 2, cy - spec.MX_CHIP[1] // 2, spec.MX_CHIP[0], spec.MX_CHIP[1],
                                    [pg_handle(skin, "matrix"), "IndexedEnabling/%d/%d/Parameter %d" % (fi, spec.N_FLT, idx["mx_f"])]))
     w, h = spec.MX_CELL
     for si, s in enumerate(spec.SRCS):
@@ -1328,18 +1371,18 @@ def main():
     ox, oy = spec.OUT_LED
     over.append(image_instance("Clip", "px_led_off.png", ox - 11, oy - 11, 22, 22, [pg_handle(skin, "out")]))
     over.append(image_instance("Clip", "px_clip_on.png", ox - 11, oy - 11, 22, 22, ["IndexedEnabling/1/2/Parameter %d" % idx["drv_clip"]]))
-    over.append(image_instance("Env", "px_led_acc_off.png", 700 - 11, 112 - 11, 22, 22, [pg_handle(skin, "moda")]))
-    over.append(image_instance("Env", "px_led_acc.png", 700 - 11, 112 - 11, 22, 22, ["IndexedEnabling/1/2/Parameter %d" % idx["env_act"]]))
+    over.append(image_instance("Env", "px_led_acc_off.png", 1235 - 11, 123 - 11, 22, 22, [pg_handle(skin, "moda")]))
+    over.append(image_instance("Env", "px_led_acc.png", 1235 - 11, 123 - 11, 22, 22, ["IndexedEnabling/1/2/Parameter %d" % idx["env_act"]]))
     for k in range(1, 9):
         led_bar(k).save(os.path.join(folder, "px_bar_%d.png" % k))
     led_bar(0).save(os.path.join(folder, "px_bar_0.png"))
-    for key, x in (("m_in", 120), ("m_out", 360)):
-        over.append(image_instance("Bar", "px_bar_0.png", x, spec.STRIP_Y + 6, 176, 16, [pg_handle(skin, "overview")]))
+    for key, x in (("m_in", 48), ("m_out", 306)):
+        over.append(image_instance("Bar", "px_bar_0.png", x, spec.STRIP_Y + 11, 176, 16, [pg_handle(skin, "overview")]))
         for k in range(1, 9):
-            over.append(image_instance("Bar", "px_bar_%d.png" % k, x, spec.STRIP_Y + 6, 176, 16,
+            over.append(image_instance("Bar", "px_bar_%d.png" % k, x, spec.STRIP_Y + 11, 176, 16,
                                        ["IndexedEnabling/%d/9/Parameter %d" % (k, idx[key])]))
-    for key, vkey, x0, dx, y in (("st_lo", "mstep", spec.STEP_X0, spec.STEP_DX, 112), ("st_hi", "mstep", spec.STEP_X0 + 8 * spec.STEP_DX, spec.STEP_DX, 112),
-                                 ("gt_lo", "mgate", spec.GATE_X0, spec.GATE_DX, 165), ("gt_hi", "mgate", spec.GATE_X0 + 8 * spec.GATE_DX, spec.GATE_DX, 165)):
+    for key, vkey, x0, dx, y in (("st_lo", "mstep", spec.STEP_X0, spec.STEP_DX, 302), ("st_hi", "mstep", spec.STEP_X0 + 8 * spec.STEP_DX, spec.STEP_DX, 302),
+                                 ("gt_lo", "mgate", spec.GATE_X0, spec.GATE_DX, 83), ("gt_hi", "mgate", spec.GATE_X0 + 8 * spec.GATE_DX, spec.GATE_DX, 83)):
         for k in range(1, 9):
             x = x0 + (k - 1) * dx
             if k == 1 or True:

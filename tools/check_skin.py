@@ -111,8 +111,8 @@ def main():
     sec = "IndexedEnabling/1/2/Parameter %d" % skin.index["in_sec"]
     for k, _, _, _ in spec.NAV:
         insts = by_param.get(k, [])
-        if len(insts) != 1 or sec not in insts[0][1]:
-            problems.append("%s: %d instance(s), want one shown on every section page" % (k, len(insts)))
+        if len(insts) != 1:
+            problems.append("%s: %d instance(s), want one shown on every page" % (k, len(insts)))
     for c in spec.CONTROLS:
         if c["kind"] != "enum" or c["widget"] != "popup":
             continue

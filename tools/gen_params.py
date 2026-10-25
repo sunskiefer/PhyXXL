@@ -327,7 +327,7 @@ def write_layout():
          "qlinks_track = " + ",".join("ql%d" % (i + 1) for i in range(16)),
          "", "[tab PhyXXL]"]
     for k, lbl, x, y in S.NAV:   # one instance each, shown on every page but the overview
-        L.append('button cx=%d cy=%d label="%s" key=%s when=in_sec:1' % (x, y + Y0, lbl, k))
+        L.append('button cx=%d cy=%d label="%s" key=%s' % (x, y + Y0, lbl, k))
     for k, lbl, x, y, w in S.CHIPS:   # the bay's mode chips
         L.append('button cx=%d cy=%d label="%s" key=%s when=in_bay:1' % (x, y + Y0, lbl, k))
     for k, lbl, x, y, w, h in S.FILTER_BTNS:
@@ -337,9 +337,9 @@ def write_layout():
         L.append('button cx=%d cy=%d label="" key=go_%s when=pg_overview:1' % (x + w // 2, y + h // 2 + Y0, k))
     for k in S.TILE_VIEWS:
         x, y, w, h = S.TILES[k]
-        L.append('readout cx=%d cy=%d w=%d h=34 label="" key=ts_%s box=0 tsize=26 when=pg_overview:1' % (
-            x + w // 2, y + h - 30 + Y0, w - 20, k))
-    L.append('readout cx=640 cy=%d w=280 h=34 label="" key=cpu_info box=0 tsize=26 when=pg_overview:1' % (S.STRIP_Y + 40 + Y0))
+        L.append('readout cx=%d cy=%d w=%d h=34 label="" key=ts_%s box=0 tsize=26 talign=left when=pg_overview:1' % (
+            x + 12 + (w - 24) // 2, y + 76 + Y0, w - 24, k))
+    L.append('readout cx=660 cy=%d w=200 h=34 label="" key=cpu_info box=0 tsize=26 talign=left when=pg_overview:1' % (S.STRIP_Y + 19 + Y0))
     # patch bay jacks
     for i, s in enumerate(S.SRCS):
         x, y = S.mod_out_pos(i)
@@ -360,12 +360,13 @@ def write_layout():
     L.append('button cx=%d cy=%d label="UNPLUG" key=pk_unplug when=pk:4' % (cx, cy + Y0))
     cx, cy = box_centre(S.PK_DONE)
     L.append('button cx=%d cy=%d label="DONE" key=pk_done when=pk:4' % (cx, cy + Y0))
-    L.append('readout cx=640 cy=%d w=900 h=50 label="" key=patch_info box=0 tsize=28 when=in_bay:1' % (590 + Y0))
-    L.append('readout cx=1055 cy=%d w=420 h=50 label="" key=touch_info tsize=30 talign=right when=hdr_ti:1' % (38 + Y0))
+    L.append('readout cx=479 cy=%d w=900 h=44 label="" key=patch_info box=0 tsize=26 talign=left when=in_bay:1' % (590 + Y0))
+    L.append('readout cx=%d cy=%d w=%d h=44 label="" key=touch_info tsize=28 when=hdr_ti:1' % (
+        S.HDR_TOUCH[0], S.HDR_TOUCH[1] + Y0, S.HDR_TOUCH[2]))
     # filter pages' bars
-    L.append('readout cx=640 cy=%d w=1100 h=50 label="" key=resp_info box=0 tsize=30 when=in_flt:1' % (300 + Y0))
-    L.append('readout cx=380 cy=%d w=700 h=44 label="" key=aud_info box=0 tsize=26 when=in_flt:1' % (497 + Y0))
-    L.append('readout cx=380 cy=%d w=700 h=44 label="" key=mod_info box=0 tsize=26 when=in_flt:1' % (578 + Y0))
+    L.append('readout cx=1000 cy=%d w=480 h=36 label="" key=resp_info box=0 tsize=24 talign=right when=in_flt:1' % (254 + Y0))
+    L.append('readout cx=499 cy=%d w=800 h=40 label="" key=aud_info box=0 tsize=26 talign=left when=in_flt:1' % (489 + Y0))
+    L.append('readout cx=429 cy=%d w=800 h=40 label="" key=mod_info box=0 tsize=26 talign=left when=in_flt:1' % (577 + Y0))
     # the matrix
     for i in range(S.N_FLT):
         x, y = S.mx_chip_pos(i)
@@ -376,7 +377,7 @@ def write_layout():
             L.append('button cx=%d cy=%d label="" key=mx_%s_%s when=pg_matrix:1' % (x, y + Y0, S.SRC_KEYS[si], d))
     for k, lbl, x, y in S.MX_BTNS:
         L.append('button cx=%d cy=%d label="%s" key=%s when=mx_on:1' % (x, y + Y0, lbl, k))
-    L.append('readout cx=300 cy=%d w=520 h=50 label="" key=mx_info box=0 tsize=26 when=pg_matrix:1' % (590 + Y0))
+    L.append('readout cx=349 cy=%d w=640 h=40 label="" key=mx_info box=0 tsize=26 talign=left when=pg_matrix:1' % (521 + Y0))
     for c in S.CONTROLS:
         L.append(layout_line(c))
     L.append('qlinks "PhyXXL" = ' + ",".join("ql%d" % (i + 1) for i in range(16)))
