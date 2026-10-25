@@ -1,0 +1,8841 @@
+{
+ "name": "PhyXXL",
+ "params": [
+  {
+   "key": "out_level",
+   "name": "Output",
+   "min": -24.0,
+   "max": 12.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "unit": "dB"
+  },
+  {
+   "key": "ms_cut",
+   "name": "Cutoff",
+   "min": -5.0,
+   "max": 5.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "ms_hp",
+   "name": "HP",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "ms_hppk",
+   "name": "HP Peak",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "ms_lp",
+   "name": "LP",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 8.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "ms_lppk",
+   "name": "LP Peak",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 2.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "ms_stereo",
+   "name": "Stereo",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "sem_freq",
+   "name": "Freq",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 6.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "sem_res",
+   "name": "Res",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 2.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "sem_mode",
+   "name": "Mode",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "sem_ingain",
+   "name": "In Gain",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 5.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "sem_innoise",
+   "name": "In Noise",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "sem_clip",
+   "name": "Soft Clip",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "mini_drive",
+   "name": "Drive",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 3.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "mini_cut",
+   "name": "Cutoff",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 6.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "mini_emph",
+   "name": "Emphasis",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 2.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "mini_vol",
+   "name": "Out Vol",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 7.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "m12_mode",
+   "name": "Mode",
+   "min": 0.0,
+   "max": 14.0,
+   "default": 3.0,
+   "dynamic_display": true,
+   "display": "int"
+  },
+  {
+   "key": "m12_cut",
+   "name": "Cutoff",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 6.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "m12_res",
+   "name": "Reson.",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 2.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "p26_cut",
+   "name": "Cutoff",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 6.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "p26_res",
+   "name": "Res",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 2.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "p26_fm1",
+   "name": "FM 1",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "p26_fm2",
+   "name": "FM 2",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "p26_fm3",
+   "name": "FM 3",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "p26_type",
+   "name": "Type",
+   "options": [
+    "4012",
+    "4072",
+    "4075"
+   ],
+   "default": 1
+  },
+  {
+   "key": "wasp_cut",
+   "name": "Cutoff",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 6.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "wasp_peak",
+   "name": "Peak",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 3.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "wasp_mode",
+   "name": "Mode",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "wasp_drive",
+   "name": "In Drive",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 3.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "prl_cut",
+   "name": "Cutoff",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 6.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "prl_res",
+   "name": "Reson.",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 2.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "prl_drive",
+   "name": "Drive",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 2.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "prl_trk",
+   "name": "Key Trk",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "prl_eg",
+   "name": "EG Int",
+   "min": -10.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "poli_cut",
+   "name": "Cutoff",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 6.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "poli_res",
+   "name": "Res",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 2.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "poli_drive",
+   "name": "Drive",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 3.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "poli_env",
+   "name": "Env Amt",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "poli_decay",
+   "name": "Decay",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 4.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "poli_mode",
+   "name": "Mode",
+   "options": [
+    "LP",
+    "BP"
+   ],
+   "default": 0
+  },
+  {
+   "key": "ms20_mix",
+   "name": "Dry / Wet",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0,
+   "dynamic_display": true,
+   "display": "int",
+   "unit": "%"
+  },
+  {
+   "key": "ms20_pan",
+   "name": "Pan",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "display": "int"
+  },
+  {
+   "key": "ms20_out",
+   "name": "Out",
+   "min": -24.0,
+   "max": 12.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "unit": "dB"
+  },
+  {
+   "key": "sem_mix",
+   "name": "Dry / Wet",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0,
+   "dynamic_display": true,
+   "display": "int",
+   "unit": "%"
+  },
+  {
+   "key": "sem_pan",
+   "name": "Pan",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "display": "int"
+  },
+  {
+   "key": "sem_out",
+   "name": "Out",
+   "min": -24.0,
+   "max": 12.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "unit": "dB"
+  },
+  {
+   "key": "mini_mix",
+   "name": "Dry / Wet",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0,
+   "dynamic_display": true,
+   "display": "int",
+   "unit": "%"
+  },
+  {
+   "key": "mini_pan",
+   "name": "Pan",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "display": "int"
+  },
+  {
+   "key": "mini_out",
+   "name": "Out",
+   "min": -24.0,
+   "max": 12.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "unit": "dB"
+  },
+  {
+   "key": "m12_mix",
+   "name": "Dry / Wet",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0,
+   "dynamic_display": true,
+   "display": "int",
+   "unit": "%"
+  },
+  {
+   "key": "m12_pan",
+   "name": "Pan",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "display": "int"
+  },
+  {
+   "key": "m12_out",
+   "name": "Out",
+   "min": -24.0,
+   "max": 12.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "unit": "dB"
+  },
+  {
+   "key": "p26_mix",
+   "name": "Dry / Wet",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0,
+   "dynamic_display": true,
+   "display": "int",
+   "unit": "%"
+  },
+  {
+   "key": "p26_pan",
+   "name": "Pan",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "display": "int"
+  },
+  {
+   "key": "p26_out",
+   "name": "Out",
+   "min": -24.0,
+   "max": 12.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "unit": "dB"
+  },
+  {
+   "key": "wasp_mix",
+   "name": "Dry / Wet",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0,
+   "dynamic_display": true,
+   "display": "int",
+   "unit": "%"
+  },
+  {
+   "key": "wasp_pan",
+   "name": "Pan",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "display": "int"
+  },
+  {
+   "key": "wasp_out",
+   "name": "Out",
+   "min": -24.0,
+   "max": 12.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "unit": "dB"
+  },
+  {
+   "key": "prl_mix",
+   "name": "Dry / Wet",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0,
+   "dynamic_display": true,
+   "display": "int",
+   "unit": "%"
+  },
+  {
+   "key": "prl_pan",
+   "name": "Pan",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "display": "int"
+  },
+  {
+   "key": "prl_out",
+   "name": "Out",
+   "min": -24.0,
+   "max": 12.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "unit": "dB"
+  },
+  {
+   "key": "poli_mix",
+   "name": "Dry / Wet",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0,
+   "dynamic_display": true,
+   "display": "int",
+   "unit": "%"
+  },
+  {
+   "key": "poli_pan",
+   "name": "Pan",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "display": "int"
+  },
+  {
+   "key": "poli_out",
+   "name": "Out",
+   "min": -24.0,
+   "max": 12.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "unit": "dB"
+  },
+  {
+   "key": "chain_series",
+   "name": "Series",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger"
+  },
+  {
+   "key": "chain_par",
+   "name": "Parallel",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger"
+  },
+  {
+   "key": "chain_clear",
+   "name": "Clear",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger"
+  },
+  {
+   "key": "out_drive",
+   "name": "Drive",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "out_lo",
+   "name": "Low Cut",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "out_hi",
+   "name": "High Cut",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 10.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "out_dw",
+   "name": "Dry / Wet",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0,
+   "dynamic_display": true,
+   "display": "int",
+   "unit": "%"
+  },
+  {
+   "key": "out_mix",
+   "name": "Mix",
+   "min": 0.0,
+   "max": 200.0,
+   "default": 100.0,
+   "dynamic_display": true,
+   "display": "int",
+   "unit": "%"
+  },
+  {
+   "key": "lfo_wave",
+   "name": "Wave",
+   "min": 0.0,
+   "max": 4.0,
+   "default": 0.0,
+   "dynamic_display": true,
+   "display": "int"
+  },
+  {
+   "key": "lfo_rate",
+   "name": "Rate",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 4.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "lfo_smooth",
+   "name": "Smooth",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "lfo_sync",
+   "name": "Sync",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "env_att",
+   "name": "Attack",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 1.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "env_hold",
+   "name": "Hold",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "env_dec",
+   "name": "Decay",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 4.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "env_trig",
+   "name": "Trigger",
+   "options": [
+    "Gate Seq",
+    "Note",
+    "Input"
+   ],
+   "default": 0
+  },
+  {
+   "key": "foll_sens",
+   "name": "Sens.",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 5.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "foll_delay",
+   "name": "Delay",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "foll_rise",
+   "name": "Rise",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 2.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "foll_fall",
+   "name": "Fall",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 4.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "foll_src",
+   "name": "Source",
+   "options": [
+    "Audio In",
+    "After Drive"
+   ],
+   "default": 0
+  },
+  {
+   "key": "st_1",
+   "name": "Step 1",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 20.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_2",
+   "name": "Step 2",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_3",
+   "name": "Step 3",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 20.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_4",
+   "name": "Step 4",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_5",
+   "name": "Step 5",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 20.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_6",
+   "name": "Step 6",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_7",
+   "name": "Step 7",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 20.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_8",
+   "name": "Step 8",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_9",
+   "name": "Step 9",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 20.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_10",
+   "name": "Step 10",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_11",
+   "name": "Step 11",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 20.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_12",
+   "name": "Step 12",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_13",
+   "name": "Step 13",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 20.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_14",
+   "name": "Step 14",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_15",
+   "name": "Step 15",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 20.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_16",
+   "name": "Step 16",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_steps",
+   "name": "Steps",
+   "min": 1.0,
+   "max": 16.0,
+   "default": 16.0,
+   "dynamic_display": true,
+   "display": "int"
+  },
+  {
+   "key": "st_rate",
+   "name": "Rate",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 5.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_swing",
+   "name": "Swing",
+   "min": 50.0,
+   "max": 75.0,
+   "default": 50.0,
+   "dynamic_display": true,
+   "display": "int",
+   "unit": "%"
+  },
+  {
+   "key": "st_rand",
+   "name": "Random",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_smooth",
+   "name": "Smooth",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 0.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "st_sync",
+   "name": "Sync",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "st_dir",
+   "name": "Direction",
+   "options": [
+    "Forward",
+    "Back",
+    "Ping-Pong",
+    "Random"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fg_1",
+   "name": "Point 1",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "fg_2",
+   "name": "Point 2",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "fg_3",
+   "name": "Point 3",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "fg_4",
+   "name": "Point 4",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "fg_5",
+   "name": "Point 5",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "fg_6",
+   "name": "Point 6",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "fg_7",
+   "name": "Point 7",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "fg_8",
+   "name": "Point 8",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "fg_rate",
+   "name": "Rate",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 4.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "fg_scale",
+   "name": "Scale",
+   "min": 0.0,
+   "max": 100.0,
+   "default": 100.0,
+   "dynamic_display": true,
+   "display": "int",
+   "unit": "%"
+  },
+  {
+   "key": "fg_bipolar",
+   "name": "Bipolar",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fg_preset",
+   "name": "Presets",
+   "options": [
+    "Ramp Up",
+    "Ramp Down",
+    "Triangle",
+    "Hump",
+    "S-Curve",
+    "Stairs",
+    "Pulse",
+    "Wobble"
+   ],
+   "default": 2
+  },
+  {
+   "key": "gt_e1",
+   "name": "Env 1",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "gt_e2",
+   "name": "Env 2",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_e3",
+   "name": "Env 3",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_e4",
+   "name": "Env 4",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_e5",
+   "name": "Env 5",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "gt_e6",
+   "name": "Env 6",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_e7",
+   "name": "Env 7",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_e8",
+   "name": "Env 8",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_e9",
+   "name": "Env 9",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "gt_e10",
+   "name": "Env 10",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_e11",
+   "name": "Env 11",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_e12",
+   "name": "Env 12",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_e13",
+   "name": "Env 13",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "gt_e14",
+   "name": "Env 14",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_e15",
+   "name": "Env 15",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_e16",
+   "name": "Env 16",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_l1",
+   "name": "Lfo 1",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "gt_l2",
+   "name": "Lfo 2",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_l3",
+   "name": "Lfo 3",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_l4",
+   "name": "Lfo 4",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_l5",
+   "name": "Lfo 5",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_l6",
+   "name": "Lfo 6",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_l7",
+   "name": "Lfo 7",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_l8",
+   "name": "Lfo 8",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_l9",
+   "name": "Lfo 9",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "gt_l10",
+   "name": "Lfo 10",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_l11",
+   "name": "Lfo 11",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_l12",
+   "name": "Lfo 12",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_l13",
+   "name": "Lfo 13",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_l14",
+   "name": "Lfo 14",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_l15",
+   "name": "Lfo 15",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_l16",
+   "name": "Lfo 16",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_steps",
+   "name": "Steps",
+   "min": 1.0,
+   "max": 16.0,
+   "default": 16.0,
+   "dynamic_display": true,
+   "display": "int"
+  },
+  {
+   "key": "gt_rate",
+   "name": "Rate",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 5.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "gt_sync",
+   "name": "Sync",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "rnd_rate",
+   "name": "Rate",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 4.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "rnd_slew",
+   "name": "Slew",
+   "min": 0.0,
+   "max": 10.0,
+   "default": 3.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "rnd_sync",
+   "name": "Sync",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "limit_res",
+   "name": "Limit Res.",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 1
+  },
+  {
+   "key": "bypass",
+   "name": "Bypass",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "data",
+   "name": "Data",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.5,
+   "dynamic_display": true
+  },
+  {
+   "key": "mx_amt",
+   "name": "Amount",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "dynamic_display": true
+  },
+  {
+   "key": "view",
+   "name": "View",
+   "options": [
+    "PhyXXL",
+    "MS-20",
+    "SEM",
+    "MINI",
+    "M12",
+    "2600",
+    "WASP",
+    "PROLOGUE",
+    "POLIVOKS",
+    "DRIVE + OUT",
+    "MOD A",
+    "STEP SEQ",
+    "FUNCTION",
+    "GATE + RAND",
+    "MOD MATRIX",
+    "PATCH BAY",
+    "PATCH BAY  /  AUDIO"
+   ],
+   "default": 0
+  },
+  {
+   "key": "nav_zoom",
+   "name": "OVERVIEW",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "nav_prev",
+   "name": "<",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "nav_next",
+   "name": ">",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_ms20",
+   "name": "Go MS-20",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_sem",
+   "name": "Go SEM",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_mini",
+   "name": "Go MINI",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_m12",
+   "name": "Go M12",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_p26",
+   "name": "Go 2600",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_wasp",
+   "name": "Go WASP",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_prl",
+   "name": "Go PROLOGUE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_poli",
+   "name": "Go POLIVOKS",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_out",
+   "name": "Go DRIVE + OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_moda",
+   "name": "Go MOD A",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_mstep",
+   "name": "Go STEP SEQ",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_mfunc",
+   "name": "Go FUNCTION",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_mgate",
+   "name": "Go GATE + RAND",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_matrix",
+   "name": "Go MOD MATRIX",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_bayM",
+   "name": "Go PATCH BAY",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "go_bayA",
+   "name": "Go bayA",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "fm_audio",
+   "name": "Edit In Bay",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "fm_open",
+   "name": "Open Matrix",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "pg_overview",
+   "name": "Page overview",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_ms20",
+   "name": "Page ms20",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_sem",
+   "name": "Page sem",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_mini",
+   "name": "Page mini",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_m12",
+   "name": "Page m12",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_p26",
+   "name": "Page p26",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_wasp",
+   "name": "Page wasp",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_prl",
+   "name": "Page prl",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_poli",
+   "name": "Page poli",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_out",
+   "name": "Page out",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_moda",
+   "name": "Page moda",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_mstep",
+   "name": "Page mstep",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_mfunc",
+   "name": "Page mfunc",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_mgate",
+   "name": "Page mgate",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_matrix",
+   "name": "Page matrix",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_bayM",
+   "name": "Page bayM",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pg_bayA",
+   "name": "Page bayA",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "in_sec",
+   "name": "In Section",
+   "options": [
+    "Overview",
+    "Section"
+   ],
+   "default": 0
+  },
+  {
+   "key": "in_flt",
+   "name": "In Filter",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "in_bay",
+   "name": "In Bay",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "hdr_ti",
+   "name": "Header Value",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "amt_on",
+   "name": "Amount Shown",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "md_ms20_cut",
+   "name": "Mod MS20 CUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_ms20_res",
+   "name": "Mod MS20 RES",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_ms20_drv",
+   "name": "Mod MS20 DRV",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_ms20_mode",
+   "name": "Mod MS20 MODE",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_ms20_pan",
+   "name": "Mod MS20 PAN",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_ms20_out",
+   "name": "Mod MS20 OUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_sem_cut",
+   "name": "Mod SEM CUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_sem_res",
+   "name": "Mod SEM RES",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_sem_drv",
+   "name": "Mod SEM DRV",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_sem_mode",
+   "name": "Mod SEM MODE",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_sem_pan",
+   "name": "Mod SEM PAN",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_sem_out",
+   "name": "Mod SEM OUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_mini_cut",
+   "name": "Mod MINI CUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_mini_res",
+   "name": "Mod MINI RES",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_mini_drv",
+   "name": "Mod MINI DRV",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_mini_mode",
+   "name": "Mod MINI MODE",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_mini_pan",
+   "name": "Mod MINI PAN",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_mini_out",
+   "name": "Mod MINI OUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_m12_cut",
+   "name": "Mod M12 CUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_m12_res",
+   "name": "Mod M12 RES",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_m12_drv",
+   "name": "Mod M12 DRV",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_m12_mode",
+   "name": "Mod M12 MODE",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_m12_pan",
+   "name": "Mod M12 PAN",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_m12_out",
+   "name": "Mod M12 OUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_p26_cut",
+   "name": "Mod 2600 CUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_p26_res",
+   "name": "Mod 2600 RES",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_p26_drv",
+   "name": "Mod 2600 DRV",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_p26_mode",
+   "name": "Mod 2600 MODE",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_p26_pan",
+   "name": "Mod 2600 PAN",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_p26_out",
+   "name": "Mod 2600 OUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_wasp_cut",
+   "name": "Mod WASP CUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_wasp_res",
+   "name": "Mod WASP RES",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_wasp_drv",
+   "name": "Mod WASP DRV",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_wasp_mode",
+   "name": "Mod WASP MODE",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_wasp_pan",
+   "name": "Mod WASP PAN",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_wasp_out",
+   "name": "Mod WASP OUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_prl_cut",
+   "name": "Mod PRL CUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_prl_res",
+   "name": "Mod PRL RES",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_prl_drv",
+   "name": "Mod PRL DRV",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_prl_mode",
+   "name": "Mod PRL MODE",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_prl_pan",
+   "name": "Mod PRL PAN",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_prl_out",
+   "name": "Mod PRL OUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_poli_cut",
+   "name": "Mod POLI CUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_poli_res",
+   "name": "Mod POLI RES",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_poli_drv",
+   "name": "Mod POLI DRV",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_poli_mode",
+   "name": "Mod POLI MODE",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_poli_pan",
+   "name": "Mod POLI PAN",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "md_poli_out",
+   "name": "Mod POLI OUT",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ma_ms20_cut",
+   "name": "Amt MS20 CUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_ms20_res",
+   "name": "Amt MS20 RES",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_ms20_drv",
+   "name": "Amt MS20 DRV",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_ms20_mode",
+   "name": "Amt MS20 MODE",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_ms20_pan",
+   "name": "Amt MS20 PAN",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_ms20_out",
+   "name": "Amt MS20 OUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_sem_cut",
+   "name": "Amt SEM CUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_sem_res",
+   "name": "Amt SEM RES",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_sem_drv",
+   "name": "Amt SEM DRV",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_sem_mode",
+   "name": "Amt SEM MODE",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_sem_pan",
+   "name": "Amt SEM PAN",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_sem_out",
+   "name": "Amt SEM OUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_mini_cut",
+   "name": "Amt MINI CUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_mini_res",
+   "name": "Amt MINI RES",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_mini_drv",
+   "name": "Amt MINI DRV",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_mini_mode",
+   "name": "Amt MINI MODE",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_mini_pan",
+   "name": "Amt MINI PAN",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_mini_out",
+   "name": "Amt MINI OUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_m12_cut",
+   "name": "Amt M12 CUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_m12_res",
+   "name": "Amt M12 RES",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_m12_drv",
+   "name": "Amt M12 DRV",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_m12_mode",
+   "name": "Amt M12 MODE",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_m12_pan",
+   "name": "Amt M12 PAN",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_m12_out",
+   "name": "Amt M12 OUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_p26_cut",
+   "name": "Amt 2600 CUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_p26_res",
+   "name": "Amt 2600 RES",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_p26_drv",
+   "name": "Amt 2600 DRV",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_p26_mode",
+   "name": "Amt 2600 MODE",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_p26_pan",
+   "name": "Amt 2600 PAN",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_p26_out",
+   "name": "Amt 2600 OUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_wasp_cut",
+   "name": "Amt WASP CUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_wasp_res",
+   "name": "Amt WASP RES",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_wasp_drv",
+   "name": "Amt WASP DRV",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_wasp_mode",
+   "name": "Amt WASP MODE",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_wasp_pan",
+   "name": "Amt WASP PAN",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_wasp_out",
+   "name": "Amt WASP OUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_prl_cut",
+   "name": "Amt PRL CUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_prl_res",
+   "name": "Amt PRL RES",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_prl_drv",
+   "name": "Amt PRL DRV",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_prl_mode",
+   "name": "Amt PRL MODE",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_prl_pan",
+   "name": "Amt PRL PAN",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_prl_out",
+   "name": "Amt PRL OUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_poli_cut",
+   "name": "Amt POLI CUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_poli_res",
+   "name": "Amt POLI RES",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_poli_drv",
+   "name": "Amt POLI DRV",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_poli_mode",
+   "name": "Amt POLI MODE",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_poli_pan",
+   "name": "Amt POLI PAN",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ma_poli_out",
+   "name": "Amt POLI OUT",
+   "min": -100.0,
+   "max": 100.0,
+   "default": 50.0,
+   "display": "int",
+   "poll": false
+  },
+  {
+   "key": "ac_in_ms20",
+   "name": "Audio IN to MS20",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_in_sem",
+   "name": "Audio IN to SEM",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_in_mini",
+   "name": "Audio IN to MINI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_in_m12",
+   "name": "Audio IN to M12",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_in_p26",
+   "name": "Audio IN to 2600",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_in_wasp",
+   "name": "Audio IN to WASP",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_in_prl",
+   "name": "Audio IN to PRL",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_in_poli",
+   "name": "Audio IN to POLI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_in_out",
+   "name": "Audio IN to OUT",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_ms20_ms20",
+   "name": "Audio MS20 to MS20",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_ms20_sem",
+   "name": "Audio MS20 to SEM",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_ms20_mini",
+   "name": "Audio MS20 to MINI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_ms20_m12",
+   "name": "Audio MS20 to M12",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_ms20_p26",
+   "name": "Audio MS20 to 2600",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_ms20_wasp",
+   "name": "Audio MS20 to WASP",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_ms20_prl",
+   "name": "Audio MS20 to PRL",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_ms20_poli",
+   "name": "Audio MS20 to POLI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_ms20_out",
+   "name": "Audio MS20 to OUT",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_sem_ms20",
+   "name": "Audio SEM to MS20",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_sem_sem",
+   "name": "Audio SEM to SEM",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_sem_mini",
+   "name": "Audio SEM to MINI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_sem_m12",
+   "name": "Audio SEM to M12",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_sem_p26",
+   "name": "Audio SEM to 2600",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_sem_wasp",
+   "name": "Audio SEM to WASP",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_sem_prl",
+   "name": "Audio SEM to PRL",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_sem_poli",
+   "name": "Audio SEM to POLI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_sem_out",
+   "name": "Audio SEM to OUT",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_mini_ms20",
+   "name": "Audio MINI to MS20",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_mini_sem",
+   "name": "Audio MINI to SEM",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_mini_mini",
+   "name": "Audio MINI to MINI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_mini_m12",
+   "name": "Audio MINI to M12",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_mini_p26",
+   "name": "Audio MINI to 2600",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_mini_wasp",
+   "name": "Audio MINI to WASP",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_mini_prl",
+   "name": "Audio MINI to PRL",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_mini_poli",
+   "name": "Audio MINI to POLI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_mini_out",
+   "name": "Audio MINI to OUT",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_m12_ms20",
+   "name": "Audio M12 to MS20",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_m12_sem",
+   "name": "Audio M12 to SEM",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_m12_mini",
+   "name": "Audio M12 to MINI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_m12_m12",
+   "name": "Audio M12 to M12",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_m12_p26",
+   "name": "Audio M12 to 2600",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_m12_wasp",
+   "name": "Audio M12 to WASP",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_m12_prl",
+   "name": "Audio M12 to PRL",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_m12_poli",
+   "name": "Audio M12 to POLI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_m12_out",
+   "name": "Audio M12 to OUT",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_p26_ms20",
+   "name": "Audio 2600 to MS20",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_p26_sem",
+   "name": "Audio 2600 to SEM",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_p26_mini",
+   "name": "Audio 2600 to MINI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_p26_m12",
+   "name": "Audio 2600 to M12",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_p26_p26",
+   "name": "Audio 2600 to 2600",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_p26_wasp",
+   "name": "Audio 2600 to WASP",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_p26_prl",
+   "name": "Audio 2600 to PRL",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_p26_poli",
+   "name": "Audio 2600 to POLI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_p26_out",
+   "name": "Audio 2600 to OUT",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_wasp_ms20",
+   "name": "Audio WASP to MS20",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_wasp_sem",
+   "name": "Audio WASP to SEM",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_wasp_mini",
+   "name": "Audio WASP to MINI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_wasp_m12",
+   "name": "Audio WASP to M12",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_wasp_p26",
+   "name": "Audio WASP to 2600",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_wasp_wasp",
+   "name": "Audio WASP to WASP",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_wasp_prl",
+   "name": "Audio WASP to PRL",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_wasp_poli",
+   "name": "Audio WASP to POLI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_wasp_out",
+   "name": "Audio WASP to OUT",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_prl_ms20",
+   "name": "Audio PRL to MS20",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_prl_sem",
+   "name": "Audio PRL to SEM",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_prl_mini",
+   "name": "Audio PRL to MINI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_prl_m12",
+   "name": "Audio PRL to M12",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_prl_p26",
+   "name": "Audio PRL to 2600",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_prl_wasp",
+   "name": "Audio PRL to WASP",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_prl_prl",
+   "name": "Audio PRL to PRL",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_prl_poli",
+   "name": "Audio PRL to POLI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_prl_out",
+   "name": "Audio PRL to OUT",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_poli_ms20",
+   "name": "Audio POLI to MS20",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_poli_sem",
+   "name": "Audio POLI to SEM",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_poli_mini",
+   "name": "Audio POLI to MINI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_poli_m12",
+   "name": "Audio POLI to M12",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_poli_p26",
+   "name": "Audio POLI to 2600",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_poli_wasp",
+   "name": "Audio POLI to WASP",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_poli_prl",
+   "name": "Audio POLI to PRL",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_poli_poli",
+   "name": "Audio POLI to POLI",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "ac_poli_out",
+   "name": "Audio POLI to OUT",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_ms20_cut_a",
+   "name": "Cable MS20 CUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_ms20_cut_b",
+   "name": "Cable MS20 CUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_ms20_res_a",
+   "name": "Cable MS20 RES a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_ms20_res_b",
+   "name": "Cable MS20 RES b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_ms20_drv_a",
+   "name": "Cable MS20 DRV a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_ms20_drv_b",
+   "name": "Cable MS20 DRV b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_ms20_mode_a",
+   "name": "Cable MS20 MODE a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_ms20_mode_b",
+   "name": "Cable MS20 MODE b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_ms20_pan_a",
+   "name": "Cable MS20 PAN a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_ms20_pan_b",
+   "name": "Cable MS20 PAN b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_ms20_out_a",
+   "name": "Cable MS20 OUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_ms20_out_b",
+   "name": "Cable MS20 OUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_sem_cut_a",
+   "name": "Cable SEM CUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_sem_cut_b",
+   "name": "Cable SEM CUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_sem_res_a",
+   "name": "Cable SEM RES a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_sem_res_b",
+   "name": "Cable SEM RES b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_sem_drv_a",
+   "name": "Cable SEM DRV a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_sem_drv_b",
+   "name": "Cable SEM DRV b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_sem_mode_a",
+   "name": "Cable SEM MODE a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_sem_mode_b",
+   "name": "Cable SEM MODE b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_sem_pan_a",
+   "name": "Cable SEM PAN a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_sem_pan_b",
+   "name": "Cable SEM PAN b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_sem_out_a",
+   "name": "Cable SEM OUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_sem_out_b",
+   "name": "Cable SEM OUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_mini_cut_a",
+   "name": "Cable MINI CUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_mini_cut_b",
+   "name": "Cable MINI CUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_mini_res_a",
+   "name": "Cable MINI RES a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_mini_res_b",
+   "name": "Cable MINI RES b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_mini_drv_a",
+   "name": "Cable MINI DRV a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_mini_drv_b",
+   "name": "Cable MINI DRV b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_mini_mode_a",
+   "name": "Cable MINI MODE a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_mini_mode_b",
+   "name": "Cable MINI MODE b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_mini_pan_a",
+   "name": "Cable MINI PAN a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_mini_pan_b",
+   "name": "Cable MINI PAN b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_mini_out_a",
+   "name": "Cable MINI OUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_mini_out_b",
+   "name": "Cable MINI OUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_m12_cut_a",
+   "name": "Cable M12 CUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_m12_cut_b",
+   "name": "Cable M12 CUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_m12_res_a",
+   "name": "Cable M12 RES a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_m12_res_b",
+   "name": "Cable M12 RES b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_m12_drv_a",
+   "name": "Cable M12 DRV a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_m12_drv_b",
+   "name": "Cable M12 DRV b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_m12_mode_a",
+   "name": "Cable M12 MODE a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_m12_mode_b",
+   "name": "Cable M12 MODE b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_m12_pan_a",
+   "name": "Cable M12 PAN a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_m12_pan_b",
+   "name": "Cable M12 PAN b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_m12_out_a",
+   "name": "Cable M12 OUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_m12_out_b",
+   "name": "Cable M12 OUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_p26_cut_a",
+   "name": "Cable 2600 CUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_p26_cut_b",
+   "name": "Cable 2600 CUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_p26_res_a",
+   "name": "Cable 2600 RES a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_p26_res_b",
+   "name": "Cable 2600 RES b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_p26_drv_a",
+   "name": "Cable 2600 DRV a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_p26_drv_b",
+   "name": "Cable 2600 DRV b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_p26_mode_a",
+   "name": "Cable 2600 MODE a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_p26_mode_b",
+   "name": "Cable 2600 MODE b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_p26_pan_a",
+   "name": "Cable 2600 PAN a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_p26_pan_b",
+   "name": "Cable 2600 PAN b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_p26_out_a",
+   "name": "Cable 2600 OUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_p26_out_b",
+   "name": "Cable 2600 OUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_wasp_cut_a",
+   "name": "Cable WASP CUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_wasp_cut_b",
+   "name": "Cable WASP CUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_wasp_res_a",
+   "name": "Cable WASP RES a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_wasp_res_b",
+   "name": "Cable WASP RES b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_wasp_drv_a",
+   "name": "Cable WASP DRV a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_wasp_drv_b",
+   "name": "Cable WASP DRV b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_wasp_mode_a",
+   "name": "Cable WASP MODE a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_wasp_mode_b",
+   "name": "Cable WASP MODE b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_wasp_pan_a",
+   "name": "Cable WASP PAN a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_wasp_pan_b",
+   "name": "Cable WASP PAN b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_wasp_out_a",
+   "name": "Cable WASP OUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_wasp_out_b",
+   "name": "Cable WASP OUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_prl_cut_a",
+   "name": "Cable PRL CUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_prl_cut_b",
+   "name": "Cable PRL CUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_prl_res_a",
+   "name": "Cable PRL RES a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_prl_res_b",
+   "name": "Cable PRL RES b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_prl_drv_a",
+   "name": "Cable PRL DRV a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_prl_drv_b",
+   "name": "Cable PRL DRV b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_prl_mode_a",
+   "name": "Cable PRL MODE a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_prl_mode_b",
+   "name": "Cable PRL MODE b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_prl_pan_a",
+   "name": "Cable PRL PAN a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_prl_pan_b",
+   "name": "Cable PRL PAN b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_prl_out_a",
+   "name": "Cable PRL OUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_prl_out_b",
+   "name": "Cable PRL OUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_poli_cut_a",
+   "name": "Cable POLI CUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_poli_cut_b",
+   "name": "Cable POLI CUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_poli_res_a",
+   "name": "Cable POLI RES a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_poli_res_b",
+   "name": "Cable POLI RES b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_poli_drv_a",
+   "name": "Cable POLI DRV a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_poli_drv_b",
+   "name": "Cable POLI DRV b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_poli_mode_a",
+   "name": "Cable POLI MODE a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_poli_mode_b",
+   "name": "Cable POLI MODE b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_poli_pan_a",
+   "name": "Cable POLI PAN a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_poli_pan_b",
+   "name": "Cable POLI PAN b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_poli_out_a",
+   "name": "Cable POLI OUT a",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "mv_poli_out_b",
+   "name": "Cable POLI OUT b",
+   "options": [
+    "-",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL",
+    "KEY"
+   ],
+   "default": 0,
+   "poll": false
+  },
+  {
+   "key": "fao_0",
+   "name": "Out Jack 0",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fao_1",
+   "name": "Out Jack 1",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fao_2",
+   "name": "Out Jack 2",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fao_3",
+   "name": "Out Jack 3",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fao_4",
+   "name": "Out Jack 4",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fao_5",
+   "name": "Out Jack 5",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fao_6",
+   "name": "Out Jack 6",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fao_7",
+   "name": "Out Jack 7",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fao_8",
+   "name": "Out Jack 8",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fai_0",
+   "name": "In Jack 0",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fai_1",
+   "name": "In Jack 1",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fai_2",
+   "name": "In Jack 2",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fai_3",
+   "name": "In Jack 3",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fai_4",
+   "name": "In Jack 4",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fai_5",
+   "name": "In Jack 5",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fai_6",
+   "name": "In Jack 6",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fai_7",
+   "name": "In Jack 7",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "fai_8",
+   "name": "In Jack 8",
+   "options": [
+    "-",
+    "Fits",
+    "Blocked"
+   ],
+   "default": 0
+  },
+  {
+   "key": "hdm_0",
+   "name": "Held hdm 1",
+   "options": [
+    "-",
+    "LFO",
+    "ENV",
+    "FOLL",
+    "STEP",
+    "FUNC",
+    "GATE",
+    "RAND",
+    "MODW",
+    "VEL"
+   ],
+   "default": 0
+  },
+  {
+   "key": "hdm_1",
+   "name": "Held hdm 2",
+   "options": [
+    "-",
+    "KEY"
+   ],
+   "default": 0
+  },
+  {
+   "key": "him_0",
+   "name": "Held him 1",
+   "options": [
+    "-",
+    "MS20 CUT",
+    "MS20 RES",
+    "MS20 DRV",
+    "MS20 MODE",
+    "MS20 PAN",
+    "MS20 OUT",
+    "SEM CUT",
+    "SEM RES",
+    "SEM DRV"
+   ],
+   "default": 0
+  },
+  {
+   "key": "him_1",
+   "name": "Held him 2",
+   "options": [
+    "-",
+    "SEM MODE",
+    "SEM PAN",
+    "SEM OUT",
+    "MINI CUT",
+    "MINI RES",
+    "MINI DRV",
+    "MINI MODE",
+    "MINI PAN",
+    "MINI OUT"
+   ],
+   "default": 0
+  },
+  {
+   "key": "him_2",
+   "name": "Held him 3",
+   "options": [
+    "-",
+    "M12 CUT",
+    "M12 RES",
+    "M12 DRV",
+    "M12 MODE",
+    "M12 PAN",
+    "M12 OUT",
+    "2600 CUT",
+    "2600 RES",
+    "2600 DRV"
+   ],
+   "default": 0
+  },
+  {
+   "key": "him_3",
+   "name": "Held him 4",
+   "options": [
+    "-",
+    "2600 MODE",
+    "2600 PAN",
+    "2600 OUT",
+    "WASP CUT",
+    "WASP RES",
+    "WASP DRV",
+    "WASP MODE",
+    "WASP PAN",
+    "WASP OUT"
+   ],
+   "default": 0
+  },
+  {
+   "key": "him_4",
+   "name": "Held him 5",
+   "options": [
+    "-",
+    "PRL CUT",
+    "PRL RES",
+    "PRL DRV",
+    "PRL MODE",
+    "PRL PAN",
+    "PRL OUT",
+    "POLI CUT",
+    "POLI RES",
+    "POLI DRV"
+   ],
+   "default": 0
+  },
+  {
+   "key": "him_5",
+   "name": "Held him 6",
+   "options": [
+    "-",
+    "POLI MODE",
+    "POLI PAN",
+    "POLI OUT"
+   ],
+   "default": 0
+  },
+  {
+   "key": "hao_0",
+   "name": "Held hao 1",
+   "options": [
+    "-",
+    "IN",
+    "MS20",
+    "SEM",
+    "MINI",
+    "M12",
+    "2600",
+    "WASP",
+    "PRL",
+    "POLI"
+   ],
+   "default": 0
+  },
+  {
+   "key": "hai_0",
+   "name": "Held hai 1",
+   "options": [
+    "-",
+    "MS20",
+    "SEM",
+    "MINI",
+    "M12",
+    "2600",
+    "WASP",
+    "PRL",
+    "POLI",
+    "OUT"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pk",
+   "name": "Patch Step",
+   "options": [
+    "Off",
+    "Choose",
+    "Pick input",
+    "Pick output",
+    "Connected"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pk_tm",
+   "name": "Mod Taps",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pk_ta",
+   "name": "Audio Taps",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pk_c",
+   "name": "Patch Cancel Shown",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "pk_cancel",
+   "name": "Patch Cancel",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "pk_done",
+   "name": "Patch Done",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "pk_unplug",
+   "name": "Patch Unplug",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tm_lfo",
+   "name": "Jack LFO",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tm_env",
+   "name": "Jack ENV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tm_foll",
+   "name": "Jack FOLL",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tm_step",
+   "name": "Jack STEP",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tm_func",
+   "name": "Jack FUNC",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tm_gate",
+   "name": "Jack GATE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tm_rand",
+   "name": "Jack RAND",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tm_modw",
+   "name": "Jack MODW",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tm_vel",
+   "name": "Jack VEL",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tm_key",
+   "name": "Jack KEY",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_ms20_cut",
+   "name": "Jack MS20 CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_ms20_res",
+   "name": "Jack MS20 RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_ms20_drv",
+   "name": "Jack MS20 DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_ms20_mode",
+   "name": "Jack MS20 MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_ms20_pan",
+   "name": "Jack MS20 PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_ms20_out",
+   "name": "Jack MS20 OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_sem_cut",
+   "name": "Jack SEM CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_sem_res",
+   "name": "Jack SEM RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_sem_drv",
+   "name": "Jack SEM DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_sem_mode",
+   "name": "Jack SEM MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_sem_pan",
+   "name": "Jack SEM PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_sem_out",
+   "name": "Jack SEM OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_mini_cut",
+   "name": "Jack MINI CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_mini_res",
+   "name": "Jack MINI RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_mini_drv",
+   "name": "Jack MINI DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_mini_mode",
+   "name": "Jack MINI MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_mini_pan",
+   "name": "Jack MINI PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_mini_out",
+   "name": "Jack MINI OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_m12_cut",
+   "name": "Jack M12 CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_m12_res",
+   "name": "Jack M12 RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_m12_drv",
+   "name": "Jack M12 DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_m12_mode",
+   "name": "Jack M12 MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_m12_pan",
+   "name": "Jack M12 PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_m12_out",
+   "name": "Jack M12 OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_p26_cut",
+   "name": "Jack 2600 CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_p26_res",
+   "name": "Jack 2600 RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_p26_drv",
+   "name": "Jack 2600 DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_p26_mode",
+   "name": "Jack 2600 MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_p26_pan",
+   "name": "Jack 2600 PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_p26_out",
+   "name": "Jack 2600 OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_wasp_cut",
+   "name": "Jack WASP CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_wasp_res",
+   "name": "Jack WASP RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_wasp_drv",
+   "name": "Jack WASP DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_wasp_mode",
+   "name": "Jack WASP MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_wasp_pan",
+   "name": "Jack WASP PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_wasp_out",
+   "name": "Jack WASP OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_prl_cut",
+   "name": "Jack PRL CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_prl_res",
+   "name": "Jack PRL RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_prl_drv",
+   "name": "Jack PRL DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_prl_mode",
+   "name": "Jack PRL MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_prl_pan",
+   "name": "Jack PRL PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_prl_out",
+   "name": "Jack PRL OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_poli_cut",
+   "name": "Jack POLI CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_poli_res",
+   "name": "Jack POLI RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_poli_drv",
+   "name": "Jack POLI DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_poli_mode",
+   "name": "Jack POLI MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_poli_pan",
+   "name": "Jack POLI PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "ti_poli_out",
+   "name": "Jack POLI OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tao_0",
+   "name": "Jack Out IN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tao_1",
+   "name": "Jack Out MS20",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tao_2",
+   "name": "Jack Out SEM",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tao_3",
+   "name": "Jack Out MINI",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tao_4",
+   "name": "Jack Out M12",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tao_5",
+   "name": "Jack Out 2600",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tao_6",
+   "name": "Jack Out WASP",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tao_7",
+   "name": "Jack Out PRL",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tao_8",
+   "name": "Jack Out POLI",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tai_0",
+   "name": "Jack In MS20",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tai_1",
+   "name": "Jack In SEM",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tai_2",
+   "name": "Jack In MINI",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tai_3",
+   "name": "Jack In M12",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tai_4",
+   "name": "Jack In 2600",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tai_5",
+   "name": "Jack In WASP",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tai_6",
+   "name": "Jack In PRL",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tai_7",
+   "name": "Jack In POLI",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "tai_8",
+   "name": "Jack In OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_f",
+   "name": "Matrix Filter",
+   "options": [
+    "MS-20",
+    "SEM",
+    "MINI",
+    "M12",
+    "2600",
+    "WASP",
+    "PROLOGUE",
+    "POLIVOKS"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxf_0",
+   "name": "Matrix MS-20",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mxf_1",
+   "name": "Matrix SEM",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mxf_2",
+   "name": "Matrix MINI",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mxf_3",
+   "name": "Matrix M12",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mxf_4",
+   "name": "Matrix 2600",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mxf_5",
+   "name": "Matrix WASP",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mxf_6",
+   "name": "Matrix PROLOGUE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mxf_7",
+   "name": "Matrix POLIVOKS",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_lfo_cut",
+   "name": "Cell LFO CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_lfo_res",
+   "name": "Cell LFO RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_lfo_drv",
+   "name": "Cell LFO DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_lfo_mode",
+   "name": "Cell LFO MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_lfo_pan",
+   "name": "Cell LFO PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_lfo_out",
+   "name": "Cell LFO OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_env_cut",
+   "name": "Cell ENV CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_env_res",
+   "name": "Cell ENV RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_env_drv",
+   "name": "Cell ENV DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_env_mode",
+   "name": "Cell ENV MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_env_pan",
+   "name": "Cell ENV PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_env_out",
+   "name": "Cell ENV OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_foll_cut",
+   "name": "Cell FOLL CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_foll_res",
+   "name": "Cell FOLL RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_foll_drv",
+   "name": "Cell FOLL DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_foll_mode",
+   "name": "Cell FOLL MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_foll_pan",
+   "name": "Cell FOLL PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_foll_out",
+   "name": "Cell FOLL OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_step_cut",
+   "name": "Cell STEP CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_step_res",
+   "name": "Cell STEP RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_step_drv",
+   "name": "Cell STEP DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_step_mode",
+   "name": "Cell STEP MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_step_pan",
+   "name": "Cell STEP PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_step_out",
+   "name": "Cell STEP OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_func_cut",
+   "name": "Cell FUNC CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_func_res",
+   "name": "Cell FUNC RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_func_drv",
+   "name": "Cell FUNC DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_func_mode",
+   "name": "Cell FUNC MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_func_pan",
+   "name": "Cell FUNC PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_func_out",
+   "name": "Cell FUNC OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_gate_cut",
+   "name": "Cell GATE CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_gate_res",
+   "name": "Cell GATE RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_gate_drv",
+   "name": "Cell GATE DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_gate_mode",
+   "name": "Cell GATE MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_gate_pan",
+   "name": "Cell GATE PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_gate_out",
+   "name": "Cell GATE OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_rand_cut",
+   "name": "Cell RAND CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_rand_res",
+   "name": "Cell RAND RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_rand_drv",
+   "name": "Cell RAND DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_rand_mode",
+   "name": "Cell RAND MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_rand_pan",
+   "name": "Cell RAND PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_rand_out",
+   "name": "Cell RAND OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_modw_cut",
+   "name": "Cell MODW CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_modw_res",
+   "name": "Cell MODW RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_modw_drv",
+   "name": "Cell MODW DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_modw_mode",
+   "name": "Cell MODW MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_modw_pan",
+   "name": "Cell MODW PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_modw_out",
+   "name": "Cell MODW OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_vel_cut",
+   "name": "Cell VEL CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_vel_res",
+   "name": "Cell VEL RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_vel_drv",
+   "name": "Cell VEL DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_vel_mode",
+   "name": "Cell VEL MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_vel_pan",
+   "name": "Cell VEL PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_vel_out",
+   "name": "Cell VEL OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_key_cut",
+   "name": "Cell KEY CUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_key_res",
+   "name": "Cell KEY RES",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_key_drv",
+   "name": "Cell KEY DRV",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_key_mode",
+   "name": "Cell KEY MODE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_key_pan",
+   "name": "Cell KEY PAN",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_key_out",
+   "name": "Cell KEY OUT",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mxs_lfo_cut",
+   "name": "State LFO CUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_lfo_res",
+   "name": "State LFO RES",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_lfo_drv",
+   "name": "State LFO DRV",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_lfo_mode",
+   "name": "State LFO MODE",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_lfo_pan",
+   "name": "State LFO PAN",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_lfo_out",
+   "name": "State LFO OUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_env_cut",
+   "name": "State ENV CUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_env_res",
+   "name": "State ENV RES",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_env_drv",
+   "name": "State ENV DRV",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_env_mode",
+   "name": "State ENV MODE",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_env_pan",
+   "name": "State ENV PAN",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_env_out",
+   "name": "State ENV OUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_foll_cut",
+   "name": "State FOLL CUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_foll_res",
+   "name": "State FOLL RES",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_foll_drv",
+   "name": "State FOLL DRV",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_foll_mode",
+   "name": "State FOLL MODE",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_foll_pan",
+   "name": "State FOLL PAN",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_foll_out",
+   "name": "State FOLL OUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_step_cut",
+   "name": "State STEP CUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_step_res",
+   "name": "State STEP RES",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_step_drv",
+   "name": "State STEP DRV",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_step_mode",
+   "name": "State STEP MODE",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_step_pan",
+   "name": "State STEP PAN",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_step_out",
+   "name": "State STEP OUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_func_cut",
+   "name": "State FUNC CUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_func_res",
+   "name": "State FUNC RES",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_func_drv",
+   "name": "State FUNC DRV",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_func_mode",
+   "name": "State FUNC MODE",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_func_pan",
+   "name": "State FUNC PAN",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_func_out",
+   "name": "State FUNC OUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_gate_cut",
+   "name": "State GATE CUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_gate_res",
+   "name": "State GATE RES",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_gate_drv",
+   "name": "State GATE DRV",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_gate_mode",
+   "name": "State GATE MODE",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_gate_pan",
+   "name": "State GATE PAN",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_gate_out",
+   "name": "State GATE OUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_rand_cut",
+   "name": "State RAND CUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_rand_res",
+   "name": "State RAND RES",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_rand_drv",
+   "name": "State RAND DRV",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_rand_mode",
+   "name": "State RAND MODE",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_rand_pan",
+   "name": "State RAND PAN",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_rand_out",
+   "name": "State RAND OUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_modw_cut",
+   "name": "State MODW CUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_modw_res",
+   "name": "State MODW RES",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_modw_drv",
+   "name": "State MODW DRV",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_modw_mode",
+   "name": "State MODW MODE",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_modw_pan",
+   "name": "State MODW PAN",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_modw_out",
+   "name": "State MODW OUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_vel_cut",
+   "name": "State VEL CUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_vel_res",
+   "name": "State VEL RES",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_vel_drv",
+   "name": "State VEL DRV",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_vel_mode",
+   "name": "State VEL MODE",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_vel_pan",
+   "name": "State VEL PAN",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_vel_out",
+   "name": "State VEL OUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_key_cut",
+   "name": "State KEY CUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_key_res",
+   "name": "State KEY RES",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_key_drv",
+   "name": "State KEY DRV",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_key_mode",
+   "name": "State KEY MODE",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_key_pan",
+   "name": "State KEY PAN",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mxs_key_out",
+   "name": "State KEY OUT",
+   "options": [
+    "-",
+    "+",
+    "-",
+    "Sel"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mx_on",
+   "name": "Cell Selected",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "mx_done",
+   "name": "MX_DONE",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_unplug",
+   "name": "MX_UNPLUG",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "mx_cancel",
+   "name": "MX_CANCEL",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "momentary": true,
+   "type": "trigger",
+   "refresh_display": true
+  },
+  {
+   "key": "patch_info",
+   "name": "Patch Info",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "touch_info",
+   "name": "Touch Info",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "aud_info",
+   "name": "Audio Info",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "mod_info",
+   "name": "Mod Info",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "resp_info",
+   "name": "Response",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "mx_info",
+   "name": "Matrix Info",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "cpu_info",
+   "name": "CPU",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_ms20",
+   "name": "Tile ms20",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_sem",
+   "name": "Tile sem",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_mini",
+   "name": "Tile mini",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_m12",
+   "name": "Tile m12",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_p26",
+   "name": "Tile p26",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_wasp",
+   "name": "Tile wasp",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_prl",
+   "name": "Tile prl",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_poli",
+   "name": "Tile poli",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_out",
+   "name": "Tile out",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_moda",
+   "name": "Tile moda",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_mstep",
+   "name": "Tile mstep",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_mfunc",
+   "name": "Tile mfunc",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_mgate",
+   "name": "Tile mgate",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_matrix",
+   "name": "Tile matrix",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "ts_bayM",
+   "name": "Tile bayM",
+   "min": 0.0,
+   "max": 0.0,
+   "default": 0.0,
+   "display": "string"
+  },
+  {
+   "key": "env_act",
+   "name": "Envelope Active",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "drv_clip",
+   "name": "Drive Clip",
+   "options": [
+    "Off",
+    "On"
+   ],
+   "default": 0
+  },
+  {
+   "key": "m_in",
+   "name": "In Meter",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "default": 0
+  },
+  {
+   "key": "m_out",
+   "name": "Out Meter",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "default": 0
+  },
+  {
+   "key": "rc00",
+   "name": "Response 1",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc01",
+   "name": "Response 2",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc02",
+   "name": "Response 3",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc03",
+   "name": "Response 4",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc04",
+   "name": "Response 5",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc05",
+   "name": "Response 6",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc06",
+   "name": "Response 7",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc07",
+   "name": "Response 8",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc08",
+   "name": "Response 9",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc09",
+   "name": "Response 10",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc10",
+   "name": "Response 11",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc11",
+   "name": "Response 12",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc12",
+   "name": "Response 13",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc13",
+   "name": "Response 14",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc14",
+   "name": "Response 15",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc15",
+   "name": "Response 16",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc16",
+   "name": "Response 17",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc17",
+   "name": "Response 18",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc18",
+   "name": "Response 19",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc19",
+   "name": "Response 20",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc20",
+   "name": "Response 21",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc21",
+   "name": "Response 22",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc22",
+   "name": "Response 23",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc23",
+   "name": "Response 24",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc24",
+   "name": "Response 25",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc25",
+   "name": "Response 26",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc26",
+   "name": "Response 27",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc27",
+   "name": "Response 28",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc28",
+   "name": "Response 29",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc29",
+   "name": "Response 30",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc30",
+   "name": "Response 31",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc31",
+   "name": "Response 32",
+   "min": 0.0,
+   "max": 77.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "rc_dot",
+   "name": "Response Dot",
+   "min": 0.0,
+   "max": 32.0,
+   "default": 0.0,
+   "display": "int"
+  },
+  {
+   "key": "st_lo",
+   "name": "Step Lamp 1-8",
+   "options": [
+    "-",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "default": 0
+  },
+  {
+   "key": "st_hi",
+   "name": "Step Lamp 9-16",
+   "options": [
+    "-",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_lo",
+   "name": "Step Lamp 1-8",
+   "options": [
+    "-",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "default": 0
+  },
+  {
+   "key": "gt_hi",
+   "name": "Step Lamp 9-16",
+   "options": [
+    "-",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16"
+   ],
+   "default": 0
+  },
+  {
+   "key": "ql1",
+   "name": "Q-Link 1",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql2",
+   "name": "Q-Link 2",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql3",
+   "name": "Q-Link 3",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql4",
+   "name": "Q-Link 4",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql5",
+   "name": "Q-Link 5",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql6",
+   "name": "Q-Link 6",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql7",
+   "name": "Q-Link 7",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql8",
+   "name": "Q-Link 8",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql9",
+   "name": "Q-Link 9",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql10",
+   "name": "Q-Link 10",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql11",
+   "name": "Q-Link 11",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql12",
+   "name": "Q-Link 12",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql13",
+   "name": "Q-Link 13",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql14",
+   "name": "Q-Link 14",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql15",
+   "name": "Q-Link 15",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "ql16",
+   "name": "Q-Link 16",
+   "min": 0.0,
+   "max": 1.0,
+   "default": 0.0,
+   "dynamic_name": true,
+   "dynamic_display": true
+  },
+  {
+   "key": "pop_fg_preset",
+   "name": "Presets List",
+   "options": [
+    "Closed",
+    "Open"
+   ],
+   "default": 0
+  }
+ ],
+ "sections": [
+  {
+   "label": "Ms-20",
+   "keys": [
+    "ms_cut",
+    "ms_hp",
+    "ms_hppk",
+    "ms_lp",
+    "ms_lppk",
+    "ms_stereo",
+    "ms20_mix",
+    "ms20_pan",
+    "ms20_out"
+   ]
+  },
+  {
+   "label": "Sem",
+   "keys": [
+    "sem_freq",
+    "sem_res",
+    "sem_mode",
+    "sem_ingain",
+    "sem_innoise",
+    "sem_clip",
+    "sem_mix",
+    "sem_pan",
+    "sem_out"
+   ]
+  },
+  {
+   "label": "Mini",
+   "keys": [
+    "mini_drive",
+    "mini_cut",
+    "mini_emph",
+    "mini_vol",
+    "mini_mix",
+    "mini_pan",
+    "mini_out"
+   ]
+  },
+  {
+   "label": "M12",
+   "keys": [
+    "m12_mode",
+    "m12_cut",
+    "m12_res",
+    "m12_mix",
+    "m12_pan",
+    "m12_out"
+   ]
+  },
+  {
+   "label": "2600",
+   "keys": [
+    "p26_cut",
+    "p26_res",
+    "p26_fm1",
+    "p26_fm2",
+    "p26_fm3",
+    "p26_type",
+    "p26_mix",
+    "p26_pan",
+    "p26_out"
+   ]
+  },
+  {
+   "label": "Wasp",
+   "keys": [
+    "wasp_cut",
+    "wasp_peak",
+    "wasp_mode",
+    "wasp_drive",
+    "wasp_mix",
+    "wasp_pan",
+    "wasp_out"
+   ]
+  },
+  {
+   "label": "Prologue",
+   "keys": [
+    "prl_cut",
+    "prl_res",
+    "prl_drive",
+    "prl_trk",
+    "prl_eg",
+    "prl_mix",
+    "prl_pan",
+    "prl_out"
+   ]
+  },
+  {
+   "label": "Polivoks",
+   "keys": [
+    "poli_cut",
+    "poli_res",
+    "poli_drive",
+    "poli_env",
+    "poli_decay",
+    "poli_mode",
+    "poli_mix",
+    "poli_pan",
+    "poli_out"
+   ]
+  },
+  {
+   "label": "Drive + Out",
+   "keys": [
+    "out_level",
+    "chain_series",
+    "chain_par",
+    "chain_clear",
+    "out_drive",
+    "out_lo",
+    "out_hi",
+    "out_dw",
+    "out_mix"
+   ]
+  },
+  {
+   "label": "Mod A",
+   "keys": [
+    "lfo_wave",
+    "lfo_rate",
+    "lfo_smooth",
+    "lfo_sync",
+    "env_att",
+    "env_hold",
+    "env_dec",
+    "env_trig",
+    "foll_sens",
+    "foll_delay",
+    "foll_rise",
+    "foll_fall",
+    "foll_src"
+   ]
+  },
+  {
+   "label": "Step Seq",
+   "keys": [
+    "st_1",
+    "st_2",
+    "st_3",
+    "st_4",
+    "st_5",
+    "st_6",
+    "st_7",
+    "st_8",
+    "st_9",
+    "st_10",
+    "st_11",
+    "st_12",
+    "st_13",
+    "st_14",
+    "st_15",
+    "st_16",
+    "st_steps",
+    "st_rate",
+    "st_swing",
+    "st_rand",
+    "st_smooth",
+    "st_sync",
+    "st_dir"
+   ]
+  },
+  {
+   "label": "Function",
+   "keys": [
+    "fg_1",
+    "fg_2",
+    "fg_3",
+    "fg_4",
+    "fg_5",
+    "fg_6",
+    "fg_7",
+    "fg_8",
+    "fg_rate",
+    "fg_scale",
+    "fg_bipolar",
+    "fg_preset"
+   ]
+  },
+  {
+   "label": "Gate + Rand",
+   "keys": [
+    "gt_e1",
+    "gt_e2",
+    "gt_e3",
+    "gt_e4",
+    "gt_e5",
+    "gt_e6",
+    "gt_e7",
+    "gt_e8",
+    "gt_e9",
+    "gt_e10",
+    "gt_e11",
+    "gt_e12",
+    "gt_e13",
+    "gt_e14",
+    "gt_e15",
+    "gt_e16",
+    "gt_l1",
+    "gt_l2",
+    "gt_l3",
+    "gt_l4",
+    "gt_l5",
+    "gt_l6",
+    "gt_l7",
+    "gt_l8",
+    "gt_l9",
+    "gt_l10",
+    "gt_l11",
+    "gt_l12",
+    "gt_l13",
+    "gt_l14",
+    "gt_l15",
+    "gt_l16",
+    "gt_steps",
+    "gt_rate",
+    "gt_sync",
+    "rnd_rate",
+    "rnd_slew",
+    "rnd_sync"
+   ]
+  },
+  {
+   "label": "Mod Matrix",
+   "keys": [
+    "mx_amt"
+   ]
+  }
+ ]
+}

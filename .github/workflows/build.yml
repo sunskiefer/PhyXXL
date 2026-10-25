@@ -1,0 +1,68 @@
+# PhyXXL: every push builds the plugin (armv7) and the skin, packages the release zip,
+# checks it (catalog_check + `sh -n` on install.sh/uninstall.sh, the L'Cronx apostrophe) and keeps it as a run
+# artifact. "Run workflow" with a version also publishes the GitHub release with that zip: pushing a v* tag does the same.
+name: build
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version to publish, e.g. 0.1.2 (empty = build only)
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Tools (Pillow, numpy, Zig)
+        run: python3 -m pip install --quiet pillow numpy ziglang
+      - name: Build
+        run: ./build.sh
+      - name: Package
+        run: |
+          V="${{ inputs.version }}"; [ "$GITHUB_REF_TYPE" = tag ] && V="${GITHUB_REF_NAME#v}"; V="${V:-0.0.${GITHUB_RUN_NUMBER}}"; echo "VERSION=$V" >> "$GITHUB_ENV"   # catalog versions are X.Y.Z; CI-only builds are 0.0.<run>
+          python3 third_party/mpc-vst-plugins/tools/release.py --so build/arm/phyxxl.so \
+            --skin "build/package/L'Cronx - VST - PhyXXL" --entry build/pluginlist-entry.xml --version "$V" \
+            --about "Multi-filter effect: eight classic synth filters (MS-20, SEM, Mini, Matrix-12, 2600, Wasp, prologue, Polivoks), audio routable from any filter into any other, modulation patch bay and matrix" \
+            --repo sunskiefer/PhyXXL --license GPL-3.0-or-later --id phyxxl -o dist
+          python3 third_party/mpc-vst-plugins/tools/catalog_check.py dist/*.zip --catalog
+      - name: Installer syntax (sh -n) and the L'Cronx apostrophe
+        run: |
+          set -e
+          for z in dist/*.zip; do
+            d=$(mktemp -d); unzip -q "$z" -d "$d"
+            find "$d" \( -name install.sh -o -name uninstall.sh \) -print0 | while IFS= read -r -d '' s; do
+              sh -n "$s" && echo "sh -n OK: $s"
+            done
+            n=$(find "$d" \( -name install.sh -o -name uninstall.sh \) | wc -l); [ "$n" -ge 2 ] || { echo "installer missing in $z"; exit 1; }
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PhyXXL-${{ github.run_number }}
+          path: dist/*.zip
+          retention-days: 30
+      - name: Publish release (tag push v*, or Run workflow with a version)
+        if: ${{ github.ref_type == 'tag' || inputs.version != '' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.VERSION }}
+          target_commitish: ${{ github.sha }}
+          name: PhyXXL ${{ env.VERSION }}
+          make_latest: true
+          prerelease: false
+          draft: false
+          files: dist/*-mpc-armv7.zip
+          body: "PhyXXL for Force / MPC OS by L'Cronx. Install: unzip, run install.sh (INSTALL.md inside), or use the MPC plugin installer."

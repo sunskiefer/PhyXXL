@@ -1,0 +1,15 @@
+{
+  "name": "PhyXXL",
+  "vendor": "L'Cronx",
+  "uid": "PhyX",
+  "version": 101,
+  "so": "phyxxl.so",
+  "params": "params.json",
+  "effect": true,
+  "build": { "root": ".", "sources": ["src/engine.cc"], "cflags": ["-Isrc"], "libs": ["-lm", "-ldl", "-lpthread"] },
+  "layout": "layout.conf",
+  "title_font": "art/fonts/TitilliumWeb-SemiBold.ttf",
+  "defines": { "HAS_LFO_BPM": 1, "HAS_TRANSPORT": 1, "HAS_DISPLAY_REV": 1, "PARAM_TEXT_MAX": 96, "DISPLAY_REV_NO_UPDATE": 1 },
+  "presets": "presets.json",
+  "tile": "art/tile.png"
+}
