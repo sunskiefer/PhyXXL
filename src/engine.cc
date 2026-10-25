@@ -1016,7 +1016,7 @@ void set_param(void *inst, const char *key, const char *val) {
   if (v < 0.5f) return;   // triggers fire on 1
   if (p == P_NAV_ZOOM) { s->set_view(V_OVERVIEW); return; }
   if (p == P_NAV_PREV || p == P_NAV_NEXT) {
-    int v2 = s->view <= 0 ? 1 : s->view + (p == P_NAV_NEXT ? 1 : -1);
+    int v2 = s->view <= 0 ? (p == P_NAV_NEXT ? 1 : N_VIEWS - 1) : s->view + (p == P_NAV_NEXT ? 1 : -1);   // every page in order, wrapping
     if (v2 < 1) v2 = N_VIEWS - 1;
     if (v2 >= N_VIEWS) v2 = 1;
     s->set_view(v2);

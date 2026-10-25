@@ -155,8 +155,9 @@ def blank(w, h):
 
 
 def tile_highlight(w, h):
-    im = Image.new("RGBA", (w, h), (255, 255, 255, 40))
-    ImageDraw.Draw(im).rectangle([0, 0, w - 1, h - 1], outline=(255, 255, 255, 255), width=3)
+    """shown only while the tile is pressed: a soft lift inside the art's own frame"""
+    im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    ImageDraw.Draw(im).rounded_rectangle([3, 3, w - 4, h - 4], radius=16, fill=(255, 255, 255, 34))
     return im
 
 
@@ -493,8 +494,10 @@ def cover(im, w, h):
 
 
 def background():
-    bg = cover(art("bg_vortex.png"), W, H).convert("RGB")
-    return Image.eval(bg, lambda v: int(v * 0.9))
+    """the flat panel colour with the vortex laid over it by its luminosity (neutral, no tint)"""
+    lum = cover(art("bg_vortex.png"), W, H).convert("L")
+    lum = lum.point(lambda v: int(18 + v * 0.40))
+    return Image.merge("RGB", (lum, lum, lum))
 
 
 def tile_borders():
@@ -762,9 +765,6 @@ def overview_panel(sk):
     od = ImageDraw.Draw(out)
     for k in spec.TILE_VIEWS:
         tx, ty, tw, th = spec.TILES[k]
-        shade = Image.new("RGBA", (tw, th), (0, 0, 0, 0))
-        ImageDraw.Draw(shade).rounded_rectangle([2, 2, tw - 3, th - 3], radius=16, fill=(255, 255, 255, 14))
-        out.alpha_composite(shade, (tx, ty))
         out.alpha_composite(nine_slice(border_of[k], tw, th), (tx, ty))
         od.text((tx + 16, ty + 34), names[k], font=font(34), fill=INK, anchor="lm")
     dx, dy = spec.DATA_POS
