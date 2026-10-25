@@ -13,11 +13,9 @@
   "moog",
   "matrix-12",
   "arp-2600",
-  "wasp",
-  "prologue",
   "polivoks"
  ],
  "license": "GPL-3.0-or-later",
  "screenshot": "https://raw.githubusercontent.com/sunskiefer/PhyXXL/v0.1.2/docs/img/overview.png",
- "summary": "Eight filters in the style of classic synths (MS-20, SEM, Minimoog, Matrix-12, 2600, Wasp, prologue, Polivoks) in one effect. Route audio from any filter into any other, and modulate each one from ten sources through a touch patch bay or a matrix. 28 factory patches. By L'Cronx, GPL-3. No third-party code; not made or endorsed by any maker of the originals."
+ "summary": "Eight filters in the style of classic synths (MS-20, SEM, Minimoog, Matrix-12, 2600, Wasp, prologue, Polivoks) in one effect. Route audio from any filter into any other; modulate each from ten sources by touch patch bay or matrix. 28 patches. By L'Cronx, GPL-3. No third-party code; not endorsed by the makers of the originals."
 }
