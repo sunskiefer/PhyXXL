@@ -411,7 +411,7 @@ struct Plug {
       sub_block(in + done * 2, n, bufl + done, bufr + done);
       done += n;
     }
-    float gain = powf(10.0f, pv[P_OUT_LEVEL] * 0.05f);
+    float gain = pv[P_OUT_LEVEL] <= -23.9f ? 0.0f : powf(10.0f, pv[P_OUT_LEVEL] * 0.05f);   // OUTPUT fully down = silence
     bool byp = on(P_BYPASS);
     float pk = 0;
     for (int i = 0; i < frames; i++) {

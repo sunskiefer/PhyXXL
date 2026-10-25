@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.6
+- OUTPUT turned fully down now mutes (it stopped at -24 dB before).
+
 ## 0.1.5
 - The DATA knob is gone from the overview (it did nothing).
 
