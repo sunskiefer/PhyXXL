@@ -154,6 +154,12 @@ def blank(w, h):
     return Image.new("RGBA", (w, h), (0, 0, 0, 0))
 
 
+def hit_image(w, h):
+    """a touch area that shows nothing: a button picture that is fully transparent can be ignored by the host's
+    pixel hit test (only the frame would answer), so it carries a 16 % black the eye cannot see on the dark panel"""
+    return Image.new("RGBA", (w, h), (0, 0, 0, 40))
+
+
 def tile_highlight(w, h):
     """shown only while the tile is pressed: a soft lift inside the art's own frame"""
     im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
@@ -1008,13 +1014,15 @@ def push_label(key, defkey):
     return "" if lab == "x" else lab.replace("_", " ")
 
 
-def rect_for(key):
+def rect_for(key, tile=False):
     """where a framework button sits and how big it is (skin pixels), by what it does"""
     def around(x, y, w, h):
         return (int(x - w // 2), int(y - h // 2), int(w), int(h))
     if key in spec.NAV_SIZE:
         x, y = {k: (x, y) for k, _, x, y in spec.NAV}[key]
         return around(x, y, *spec.NAV_SIZE[key])
+    if tile and key.startswith("go_") and key[3:] in spec.TILES:
+        return tuple(spec.TILES[key[3:]])   # the overview tile (go_bayM is also a chip: same parameter, two buttons)
     for k, _, x, y, w in spec.CHIPS:
         if key == k:
             return around(x, y, w, 40)
@@ -1077,7 +1085,7 @@ def restyle_triggers(skin, folder):
         data = btn["componentData"]["data"]
         off_name, on_name = data["offImage"], data["onImage"]
         label = push_label(key, t)
-        rect = rect_for(key)
+        rect = rect_for(key, tile=not label)
         if rect:
             w, h = rect[2], rect[3]
             for s2 in d["componentsData"]:
@@ -1089,13 +1097,13 @@ def restyle_triggers(skin, folder):
             nav_image(label, False, w, h).save(os.path.join(folder, off_name))
             nav_image(label, True, w, h).save(os.path.join(folder, on_name))
         elif key.startswith("mxf_"):
-            blank(w, h).save(os.path.join(folder, off_name))
+            hit_image(w, h).save(os.path.join(folder, off_name))
             chip_image(spec.FILTERS[int(key.split("_")[1])][3], 1).resize((w, h), Image.LANCZOS).save(os.path.join(folder, on_name))
         elif key.startswith("go_") and not label:
-            blank(w, h).save(os.path.join(folder, off_name))
+            hit_image(w, h).save(os.path.join(folder, off_name))
             tile_highlight(w, h).save(os.path.join(folder, on_name))
         elif key.startswith("mx_"):
-            blank(w, h).save(os.path.join(folder, off_name))
+            hit_image(w, h).save(os.path.join(folder, off_name))
             tile_highlight(w, h).save(os.path.join(folder, on_name))
         else:   # tm_ ti_ tao_ tai_ jacks
             blank(w, h).save(os.path.join(folder, off_name))
@@ -1105,7 +1113,7 @@ def restyle_triggers(skin, folder):
             im.save(os.path.join(folder, on_name))
     for inst in skin.page["componentsData"]:
         if inst["componentData"]["type"].startswith("shTrig_"):
-            rect = rect_for(skin.param_of(inst))
+            rect = rect_for(skin.param_of(inst), tile=inst["componentData"]["type"].endswith("_x"))
             if rect:
                 inst["bounds"]["bounds"] = bstr(*rect)
 

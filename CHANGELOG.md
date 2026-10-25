@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.4
+- The PATCH BAY tile on the overview works again (it was sitting under the header chip).
+- < and > move one page per tap.
+- A freshly loaded plugin passes sound: the default patch is IN > MS-20 > OUT.
+
 ## 0.1.3
 - Every page rebuilt to the mock layout: 4 x 4 overview with the original tile squares (transparent, lit only while pressed), DATA in the empty 16th slot, names under the knobs, response display box, AUDIO and MOD bars, bigger mod matrix.
 - No blue anywhere: colour only on the patch cables; the response dots are soft opaque white.

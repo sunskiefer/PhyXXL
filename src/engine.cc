@@ -461,6 +461,7 @@ struct Plug {
       lamp_in = mi; lamp_out = mo; lamp_clip = clip; lamp_env = env_l;
       lamp_step = view == V_MGATE ? gate.pos + 1 : step.lit;
       (void)stp;
+      if (nav_cool > 0) nav_cool--;
       if ((++curve_tick & 1) == 0 && curve_calc()) lamp_dirty = true;   // the picture: at most every 200 ms, only when it moved
       if (lamp_dirty) { lamp_dirty = false; bump(); }
     }
@@ -649,6 +650,7 @@ struct Plug {
 
   // ---- the response picture: RC_COLS columns, each a stroke between two of RC_ROWS rows (see tools/spec.py) ----------------------
   unsigned curve_tick = 0;
+  int nav_cool = 0;   // 100 ms ticks left in which < and > ignore another press: one tap moves one page
   unsigned char rc[RC_COLS] = {0}; int rc_dot = 0;
   static float lp2(float x, float q) { float a = 1 - x * x; return 1.0f / (a * a + x * x / (q * q)); }
   static float hp2(float x, float q) { return x * x * x * x * lp2(x, q); }
@@ -1016,6 +1018,8 @@ void set_param(void *inst, const char *key, const char *val) {
   if (v < 0.5f) return;   // triggers fire on 1
   if (p == P_NAV_ZOOM) { s->set_view(V_OVERVIEW); return; }
   if (p == P_NAV_PREV || p == P_NAV_NEXT) {
+    if (s->nav_cool > 0) return;
+    s->nav_cool = 3;
     int v2 = s->view <= 0 ? (p == P_NAV_NEXT ? 1 : N_VIEWS - 1) : s->view + (p == P_NAV_NEXT ? 1 : -1);   // every page in order, wrapping
     if (v2 < 1) v2 = N_VIEWS - 1;
     if (v2 >= N_VIEWS) v2 = 1;

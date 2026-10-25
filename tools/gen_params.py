@@ -85,7 +85,9 @@ def build_params():
     family("ma", [{"key": "ma_%s_%s" % (f, d), "name": "Amt %s %s" % (S.FSHORT[f], d.upper()), "min": -100.0, "max": 100.0,
                    "default": 50.0, "display": "int", "poll": False} for f in S.FKEYS for d in S.DEST_KEYS])
     # audio cables: ac_<out>_<in> 1 = patched (a filter into itself is a loop and is refused)
-    family("ac", [opt_param("ac_%s_%s" % (a[0], b[0]), "Audio %s to %s" % (a[1], b[1]), S.OFF_ON, 0, poll=False)
+    # the default patch is IN > MS-20 > OUT, so a freshly loaded plugin passes sound
+    family("ac", [opt_param("ac_%s_%s" % (a[0], b[0]), "Audio %s to %s" % (a[1], b[1]), S.OFF_ON,
+                            1 if (a[0], b[0]) in (("in", "ms20"), ("ms20", "out")) else 0, poll=False)
                   for a in S.AUDIO_OUTS for b in S.AUDIO_INS])
     # cable pictures of the modulation bay: per input, sources 0-4 in a, 5-9 in b (6 positions each)
     half = S.N_SRC // 2

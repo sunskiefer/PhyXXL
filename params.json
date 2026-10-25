@@ -3192,7 +3192,7 @@
     "Off",
     "On"
    ],
-   "default": 0,
+   "default": 1,
    "poll": false
   },
   {
@@ -3362,7 +3362,7 @@
     "Off",
     "On"
    ],
-   "default": 0,
+   "default": 1,
    "poll": false
   },
   {
