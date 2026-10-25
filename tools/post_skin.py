@@ -763,7 +763,7 @@ def overview_panel(sk):
     for k in spec.TILE_VIEWS:
         tx, ty, tw, th = spec.TILES[k]
         shade = Image.new("RGBA", (tw, th), (0, 0, 0, 0))
-        ImageDraw.Draw(shade).rounded_rectangle([2, 2, tw - 3, th - 3], radius=16, fill=(6, 6, 8, 255))
+        ImageDraw.Draw(shade).rounded_rectangle([2, 2, tw - 3, th - 3], radius=16, fill=(255, 255, 255, 14))
         out.alpha_composite(shade, (tx, ty))
         out.alpha_composite(nine_slice(border_of[k], tw, th), (tx, ty))
         od.text((tx + 16, ty + 34), names[k], font=font(34), fill=INK, anchor="lm")
