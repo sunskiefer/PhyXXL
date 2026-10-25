@@ -45,6 +45,8 @@ def main():
         return any(want in hs for _, hs in by_param.get(key, []))
 
     for c in spec.CONTROLS:
+        if c["key"] == "data":
+            continue   # no knob on the page: the parameter stays so indexes never move
         if c["key"] == "mx_amt":   # shared by the matrix and the bay's connected page: shown by amt_on
             if not any("IndexedEnabling/1/2/Parameter %d" % skin.index["amt_on"] in hs for _, hs in by_param.get("mx_amt", [])):
                 problems.append("mx_amt is not shown by amt_on")

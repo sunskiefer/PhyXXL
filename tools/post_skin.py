@@ -773,8 +773,6 @@ def overview_panel(sk):
         tx, ty, tw, th = spec.TILES[k]
         out.alpha_composite(nine_slice(border_of[k], tw, th), (tx, ty))
         od.text((tx + 16, ty + 34), names[k], font=font(34), fill=INK, anchor="lm")
-    dx, dy = spec.DATA_POS
-    od.text((dx, dy + 64), "DATA", font=font(28), fill=INK, anchor="mm")
     sy = spec.STRIP_Y + 19
     od.text((16, sy), "IN", font=font(24), fill=DIM, anchor="lm")
     od.text((262, sy), "OUT", font=font(24), fill=DIM, anchor="lm")

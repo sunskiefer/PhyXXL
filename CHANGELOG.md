@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.5
+- The DATA knob is gone from the overview (it did nothing).
+
 ## 0.1.4
 - The PATCH BAY tile on the overview works again (it was sitting under the header chip).
 - < and > move one page per tap.

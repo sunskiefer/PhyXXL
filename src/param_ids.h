@@ -976,7 +976,7 @@ static const short TILE_VIEW[N_TILES] = {V_MS20, V_SEM, V_MINI, V_M12, V_P26, V_
 
 // the views' controls in Q-Link order (top row left to right, then the next): up to 16 per view, -1 = none
 static const short VIEW_QLINKS[N_VIEWS][16] = {
-    {P_MS20_MIX, P_SEM_MIX, P_MINI_MIX, P_M12_MIX, P_P26_MIX, P_WASP_MIX, P_PRL_MIX, P_POLI_MIX, P_OUT_LEVEL, P_OUT_DRIVE, P_OUT_LO, P_OUT_HI, P_OUT_DW, P_LFO_RATE, P_ENV_DEC, P_DATA},
+    {P_MS20_MIX, P_SEM_MIX, P_MINI_MIX, P_M12_MIX, P_P26_MIX, P_WASP_MIX, P_PRL_MIX, P_POLI_MIX, P_OUT_LEVEL, P_OUT_DRIVE, P_OUT_LO, P_OUT_HI, P_OUT_DW, P_LFO_RATE, P_ENV_DEC, -1},
     {P_MS_CUT, P_MS_HP, P_MS_HPPK, P_MS_LP, P_MS_LPPK, P_MS_STEREO, P_MS20_MIX, P_MS20_PAN, P_MS20_OUT, -1, -1, -1, -1, -1, -1, -1},
     {P_SEM_FREQ, P_SEM_RES, P_SEM_MODE, P_SEM_INGAIN, P_SEM_INNOISE, P_SEM_CLIP, P_SEM_MIX, P_SEM_PAN, P_SEM_OUT, -1, -1, -1, -1, -1, -1, -1},
     {P_MINI_DRIVE, P_MINI_CUT, P_MINI_EMPH, P_MINI_VOL, P_MINI_MIX, P_MINI_PAN, P_MINI_OUT, -1, -1, -1, -1, -1, -1, -1, -1, -1},

@@ -381,6 +381,8 @@ def write_layout():
         L.append('button cx=%d cy=%d label="%s" key=%s when=mx_on:1' % (x, y + Y0, lbl, k))
     L.append('readout cx=349 cy=%d w=640 h=40 label="" key=mx_info box=0 tsize=26 talign=left when=pg_matrix:1' % (521 + Y0))
     for c in S.CONTROLS:
+        if c["key"] == "data":
+            continue   # the DATA knob keeps its parameter (indexes never move) but has no place on the page
         L.append(layout_line(c))
     L.append('qlinks "PhyXXL" = ' + ",".join("ql%d" % (i + 1) for i in range(16)))
     L = [l for l in L if l is not None]

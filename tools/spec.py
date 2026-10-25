@@ -350,7 +350,7 @@ def mx_chip_pos(f):
 
 # ------------------------------------------------------------------------------------------------ Q-Links
 OVERVIEW_QLINKS = [f + "_mix" for f in FKEYS] + ["out_level", "out_drive", "out_lo", "out_hi", "out_dw", "lfo_rate",
-                                                  "env_dec", "data"]
+                                                  "env_dec", "-"]
 STEP_QLINKS = ["st_steps", "st_rate", "st_swing", "st_rand", "st_smooth", "st_dir", "st_sync", "-"] + \
               ["st_%d" % (i + 1) for i in range(8)]
 FUNC_QLINKS = ["fg_rate", "fg_scale", "fg_bipolar", "fg_preset", "-", "-", "-", "-"] + ["fg_%d" % (i + 1) for i in range(8)]
